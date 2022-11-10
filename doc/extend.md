@@ -123,7 +123,7 @@ Docs.
 An article by @JangoSteve explains how to [track jQuery AJAX requests in Google
 Analytics](https://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
 
-Add this to `plugins.js`:
+Add this to `angularjs.js`:
 
 ```js
 /*
