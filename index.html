@@ -26,30 +26,40 @@
 
   <body ng-controller="MainCtrl" style="display: flex;    flex-direction: column; height:100vh; width: 100%">
 
-  <div id="navbar" class="main-container-show-hide" style="height: 0vh; background-color: lightgray" ng-show="selectedEvent !== 'all'">
-      <div class="navbar-container">
-        <div class="navbar-item" style="    background: url('img/back-arrow.svg');
-        width: 40px;
-        height: 5vh;
-        background-repeat: no-repeat;" ng-click="back()"></div>
-
-        <div ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item" > <a href="index.html#{{item}}-ny">{{item}}</a></div>
-        <div ng-click="openRSVPModal()" class="navbar-item"><span>RSVP</span></div>
-      </div>
+    <nav id="navbar" class="navbar navbar-default main-container-show-hide" style="margin-bottom: 0!important;" ng-show="selectedEvent !== 'all'">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <div class="navbar-item" style="background: url('img/back-arrow.svg'); width: 40px; height: 5vh; cursor:pointer; background-repeat: no-repeat;" ng-click="back()"></div>
     </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul ng-class="getFieldClass(selectedEvent)" class="nav navbar-nav">
+        <li ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item" > <a href="index.html#{{item}}-ny">{{item}}</a></li>
+      </ul>
 
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-click="openRsvpModal()" href="#">RSVP</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
 
 
     <div style="display: flex">
 
-      <div  id="ny" ng-click="selectEvent('ny')" ng-show="selectedEvent == 'all' || selectedEvent == 'ny'" class = "main-container main-container-show-hide" style="background-color: teal">
+      <div  id="ny" ng-click="selectEvent('ny')" ng-show="selectedEvent == 'all' || selectedEvent == 'ny'" class = "main-container main-container-show-hide ny" >
         <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-          <h1 style="color: white">NY</h1>
-          <img src="https://raw.githubusercontent.com/e-ewedding/wedding/main/img/ny-logo.png">
+          <h1 class="event-header">NY</h1>
+          <img src="img/ny-logo-transparent.png">
         </div>
         <div ng-show="!animate" class="details" ng-if="selectedEvent === 'ny'">
-          <div id="Springville-ny" > <p>
+          <div class="event-item" id="Springville-ny" ><h2>Springville</h2> <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -90,7 +100,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div id="the cabin-ny" > <p>
+          <div class="event-item" id="the cabin-ny" ><h2>The Cabin</h2> <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -131,7 +141,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div id="Where to eat-ny" > <p>
+          <div class="event-item"  id="Where to eat-ny" > <h2>Where to Eat</h2><p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -172,7 +182,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div id="Where to stay-ny" > <p>
+          <div class="event-item"  id="Where to stay-ny" > <h2>Where to Stay</h2><p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -213,7 +223,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div id="Timeline-ny" > <p>
+          <div class="event-item" id="Timeline-ny" ><h2>Timeline</h2> <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -258,14 +268,14 @@
         </div>
       </div>
 
-      <div style="background: linear-gradient(to right, teal 50%, lightpink 50%); display: flex; align-items: center;" ng-show="selectedEvent == 'all'">
-        <button ng-click="openRsvpModal()">RSVP</button>
+      <div style="background: linear-gradient(to right, #79b7ba 50%, #eccbbd 50%); display: flex; align-items: center;" ng-show="selectedEvent == 'all'">
+        <div ng-hide="hideRsvp" class="rsvp" ng-click="openRsvpModal()">RSVP</div>
       </div>
 
-      <div id="fr" ng-click="selectEvent('fr')" ng-show="selectedEvent == 'all' || selectedEvent == 'fr'" class = "main-container main-container-show-hide" style="background-color: lightpink">
+      <div id="fr" ng-click="selectEvent('fr')" ng-show="selectedEvent == 'all' || selectedEvent == 'fr'" class = "main-container main-container-show-hide fr" >
         <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-          <h1 style="color: white">FR</h1>
-          <img src="img/fr-logo.png">
+          <h1 class="event-header">FR</h1>
+          <img src="img/fr-logo-transparent.png">
         </div>
         <div ng-show="!animate" class="details" ng-if="selectedEvent === 'fr'">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
@@ -312,10 +322,10 @@
 
     </div>
 
-    <div id="mtl" ng-click="selectEvent('mtl')" ng-show="selectedEvent == 'all' || selectedEvent == 'mtl'" class="main-container-show-hide" ng-class="selectedEvent == 'mtl' ? 'main-container' : 'main-container-lite'" style="background-color: darkgrey">
+    <div id="mtl" ng-click="selectEvent('mtl')" ng-show="selectedEvent == 'all' || selectedEvent == 'mtl'" class="main-container-show-hide mtl" ng-class="selectedEvent == 'mtl' ? 'main-container' : 'main-container-lite'" >
       <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-        <h1 style="color: white">MTL</h1>
-        <img src="img/mtl-logo.png">
+        <h1 class="event-header">MTL</h1>
+        <img src="img/mtl-logo-transparent.png">
       </div>
       <div ng-show="!animate" class="details" ng-if="selectedEvent === 'mtl'">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.

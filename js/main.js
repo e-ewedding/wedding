@@ -49,6 +49,22 @@ $scope.tableOfContents =
     ]
   };
 
+    $scope.getFieldClass = function(entry){
+      if ($(window).width() <= 768) {
+        switch (entry)
+        {
+          case "ny":
+            return {"fr": true};
+          case "fr":
+            return {"ny": true};
+          case "mtl":
+            return {"mtl-navbar":true};
+          default:
+            return {};
+        }
+      }
+
+    }
 
     $scope.back = function()
     {
@@ -60,11 +76,13 @@ $scope.tableOfContents =
       fr.style.height = "80vh";
       mtl.style.height = "20vh";
       $scope.selectedEvent = 'all'
-      $scope.animate = true
+      $scope.animate = true;
+      $scope.hideRsvp = false;
     }
     $scope.selectEvent = function(event)
     {
       $scope.animate = false;
+      $scope.hideRsvp = true;
       switch(event)
       {
         case 'ny':

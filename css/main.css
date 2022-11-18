@@ -58,3 +58,34 @@
 .navbar-container{
   height: 100%; color: white; display: flex;justify-content: flex-start;padding: 0px 10px;
 }
+
+.ny{
+  background-color: #79b7ba;
+}
+
+.fr{
+  background-color: #eccbbd;
+}
+
+.mtl{
+  background-color: #99a9a6;
+}
+.mtl-navbar
+{
+  background-color: whitesmoke;
+}
+
+.event-header
+{
+  color: white;
+  text-align: center;
+}
+
+.rsvp{
+  border-radius: 5px;
+  border-color: darkgoldenrod;
+  background-color: white;
+  border: 10px solid darkgoldenrod;
+  font-size: 50px;
+  font-family: fantasy;
+}
