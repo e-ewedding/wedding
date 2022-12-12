@@ -1,14 +1,44 @@
 (function(window) {
-  var testApp = window.testApp;
-
-  testApp = angular.module( 'myApp', ['ngAnimate','ui.bootstrap'] );
-
+  var testApp = angular.module( 'myApp', ['ngAnimate','ui.bootstrap'] );
   testApp.controller( 'MainCtrl', function( $scope,  $timeout,$modal,)
   {
-    const ny = document.querySelector('#ny');
-    const fr = document.querySelector('#fr');
-    const mtl = document.querySelector('#mtl');
-    const navbar = document.querySelector('#navbar');
+    $scope.guestList =
+      [
+        {name:"Elliot1",pw:"1",invites:["fr"]},
+        {name:"Elliot2",pw:"2",invites:["fr","ny","mtl"]},
+        {name:"Elliot3",pw:"3",invites:["fr","ny"]},
+        {name:"Elliot3",pw:"4",invites:["mtl"]},
+      ];
+
+    $scope.invited = function(event)
+    {
+      return $scope.guest.invites.includes(event);
+    }
+
+    $scope.password = {text:null}
+    $scope.guest = _.find($scope.guestList,{guest:sessionStorage.getItem("guest")}) ? _.find($scope.guestList,{guest:sessionStorage.getItem("guest")}) : false;
+      $scope.verify = function()
+    {
+      let guest = _.find($scope.guestList,{pw:$scope.password.text})
+      if(guest)
+      {
+        $scope.guest = guest
+        $scope.invalid = false;
+        sessionStorage.setItem("guest",$scope.guest.name)
+        $timeout(function()
+        {
+          $scope.ny = document.querySelector('#ny');
+          $scope.fr = document.querySelector('#fr');
+          $scope.mtl = document.querySelector('#mtl');
+          $scope.navbar = document.querySelector('#navbar');
+        })
+
+      }
+      else
+      {
+        $scope.invalid = true;
+      }
+    }
     $scope.selectedEvent = 'all'
     $scope.animate = true;
     $scope.openRsvpModal = function()
@@ -69,15 +99,39 @@ $scope.tableOfContents =
     $scope.back = function()
     {
       navbar.style.height = "0vh"
-      ny.style.width = "50%";
-      fr.style.width = "50%";
-      mtl.style.width = "100%";
-      ny.style.height = "80vh";
-      fr.style.height = "80vh";
-      mtl.style.height = "20vh";
       $scope.selectedEvent = 'all'
       $scope.animate = true;
       $scope.hideRsvp = false;
+      if($scope.guest.invites.length === 3)
+      {
+        $scope.ny.style.width = "50%";
+        $scope.fr.style.width = "50%";
+        $scope.mtl.style.width = "100%";
+        $scope.ny.style.height = "80vh";
+        $scope.fr.style.height = "80vh";
+        $scope.mtl.style.height = "20vh";
+      }else if($scope.invited('fr') && $scope.invited('ny') && !$scope.invited('mtl'))
+      {
+        $scope.ny.style.width = "50%";
+        $scope.fr.style.width = "50%";
+        $scope.mtl.style.width = "0%";
+        $scope.ny.style.height = "100vh";
+        $scope.fr.style.height = "100vh";
+        $scope.mtl.style.height = "0vh";
+      }
+      else if($scope.guest.invites.length === 1)
+      {
+        $scope[$scope.guest.invites[0]].width = "100%";
+        $scope[$scope.guest.invites[0]].height = "100vh";
+      }
+
+
+
+
+
+
+
+
     }
     $scope.selectEvent = function(event)
     {
@@ -86,24 +140,24 @@ $scope.tableOfContents =
       switch(event)
       {
         case 'ny':
-          ny.style.width = "100%";
-          ny.style.height = "95vh";
-          fr.style.width = "0%";
-          mtl.style.height = "0vh";
-          navbar.style.height = "5vh"
+          $scope.ny.style.width = "100%";
+          $scope.ny.style.height = "95vh";
+          $scope.fr.style.width = "0%";
+          $scope.mtl.style.height = "0vh";
+          $scope.navbar.style.height = "5vh"
           break;
         case 'mtl':
-          ny.style.height = "0vh";
-          fr.style.height = "0vh";
-          mtl.style.height = "95vh";
-          navbar.style.height = "5vh"
+          $scope.ny.style.height = "0vh";
+          $scope.fr.style.height = "0vh";
+          $scope.mtl.style.height = "95vh";
+          $scope.navbar.style.height = "5vh"
           break;
         case 'fr':
-          ny.style.width = "0%";
-          fr.style.width = "100%";
-          fr.style.height = "95vh";
-          navbar.style.height = "5vh"
-          mtl.style.height = "0vh";
+          $scope.ny.style.width = "0%";
+          $scope.fr.style.width = "100%";
+          $scope.fr.style.height = "95vh";
+          $scope.navbar.style.height = "5vh"
+          $scope.mtl.style.height = "0vh";
           break;
       }
 

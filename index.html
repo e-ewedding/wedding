@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app='myApp'>
+<html lang="en" ng-app='myApp'>
   <head>
     <link rel="shortcut icon" href="favicon.ico" />
     <meta charset="utf-8">
@@ -16,44 +16,39 @@
     <script src="js/main.js"></script>
     <script src="js/rsvpCtrl.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
-
-
-
-
-
-    </script>
   </head>
 
   <body ng-controller="MainCtrl" style="display: flex;    flex-direction: column; height:100vh; width: 100%">
-
+  <div ng-if="guest" id="authenticatedContainer" style="width: 100%;height: 100vh">
     <nav id="navbar" class="navbar navbar-default main-container-show-hide" style="margin-bottom: 0!important;" ng-show="selectedEvent !== 'all'">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <div class="navbar-item" style="background: url('img/back-arrow.svg'); width: 40px; height: 5vh; cursor:pointer; background-repeat: no-repeat;" ng-click="back()"></div>
-    </div>
+        <div class="navbar-item" style="background: url('img/back-arrow.svg'); width: 40px; height: 5vh; cursor:pointer; background-repeat: no-repeat;" ng-click="back()"></div>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul ng-class="getFieldClass(selectedEvent)" class="nav navbar-nav">
-        <li ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item" > <a href="index.html#{{item}}-ny">{{item}}</a></li>
-      </ul>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul ng-class="getFieldClass(selectedEvent)" class="nav navbar-nav">
+          <li ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item" > <a href="index.html#{{item}}-ny">{{item}}</a></li>
+        </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ng-click="openRsvpModal()" href="#">RSVP</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-</nav>
-
-
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ng-click="openRsvpModal()" href="#">RSVP</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
     <div style="display: flex">
 
-      <div  id="ny" ng-click="selectEvent('ny')" ng-show="selectedEvent == 'all' || selectedEvent == 'ny'" class = "main-container main-container-show-hide ny" >
+      <div  id="ny" ng-click="selectEvent('ny')"
+            ng-show="invited('ny') &&  (selectedEvent == 'all' || selectedEvent == 'ny')"
+            ng-style="guest.invites.length > 2 && {'height':'80vh'} || {'height': '100vh'}"
+            class = "main-container main-container-show-hide ny" >
         <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">NY</h1>
           <img src="img/ny-logo-transparent.png">
@@ -268,11 +263,17 @@
         </div>
       </div>
 
-      <div style="background: linear-gradient(to right, #79b7ba 50%, #eccbbd 50%); display: flex; align-items: center;" ng-show="selectedEvent == 'all'">
+      <div style="background: linear-gradient(to right, #79b7ba 50%, #eccbbd 50%); display: flex; align-items: center;"
+
+           ng-show="selectedEvent == 'all' && guest.invites.length > 1">
         <div ng-hide="hideRsvp" class="rsvp" ng-click="openRsvpModal()">RSVP</div>
       </div>
 
-      <div id="fr" ng-click="selectEvent('fr')" ng-show="selectedEvent == 'all' || selectedEvent == 'fr'" class = "main-container main-container-show-hide fr" >
+      <div id="fr"
+           ng-click="selectEvent('fr')"
+           ng-show="invited('fr') &&  (selectedEvent == 'all' || selectedEvent == 'fr')"
+           ng-style="guest.invites.length > 2 && {'height':'80vh'} || {'height': '100vh'}"
+           class = "main-container main-container-show-hide fr" >
         <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">FR</h1>
           <img src="img/fr-logo-transparent.png">
@@ -321,11 +322,11 @@
       </div>
 
     </div>
-
-    <div id="mtl" ng-click="selectEvent('mtl')" ng-show="selectedEvent == 'all' || selectedEvent == 'mtl'" class="main-container-show-hide mtl" ng-class="selectedEvent == 'mtl' ? 'main-container' : 'main-container-lite'" >
-      <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-        <h1 class="event-header">MTL</h1>
-        <img src="img/mtl-logo-transparent.png">
+    <div id="mtl" ng-click="selectEvent('mtl')" ng-show="invited('mtl') && (selectedEvent == 'all' || selectedEvent == 'mtl')" class="main-container-show-hide mtl" ng-class="selectedEvent == 'mtl' ? 'main-container' : 'main-container-lite'" >
+      <div ng-show="animate" class="animate-show animate-hide mtl-container" ng-if="selectedEvent == 'all'">
+        <h1 ng-show="animate" class="event-header" style="margin-top: 5px;">MTL</h1>
+        <!--        <img src="img/mtl-logo-transparent.svg">-->
+        <div ng-show="animate" style="background-image:url('img/mtl-logo-transparent.svg');background-repeat:no-repeat;  background-size: cover; width:15.7vh;height: 100% "></div>
       </div>
       <div ng-show="!animate" class="details" ng-if="selectedEvent === 'mtl'">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
@@ -369,6 +370,14 @@
         Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
       </div>
     </div>
+  </div>
+  <div ng-if="!guest" id="unauthenticatedContainer" style="width: 100%;height: 100vh;display: flex; background-color: black;flex-direction: column; justify-content: center;align-items: center;">
+    <div>
+      <input ng-model="password.text" placeholder="enter your password">
+      <button ng-click="verify()" >submit</button>
+    </div>
+    <p ng-if="invalid" style="color:red">hmm, that password didn't work</p>
+  </div>
   </body>
 
 </html>
@@ -382,6 +391,6 @@
       <div class="modal-body" ng-if="verified">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3S9Xrf3e1DnlHNcJsqra-XBwQurr208-4SGHvs3JIqDcNwQ/viewform?embedded=true" width="100%" height="1150px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
-      <input ng-model="password">
-      <button ng-click="verify()">Verify</button>
+<!--      <input ng-model="password">-->
+<!--      <button ng-click="verify()">Verify</button>-->
         </script>
