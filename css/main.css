@@ -1,3 +1,9 @@
+@font-face {
+  font-family: wedding;
+  src: url(../RusticWedding.ttf);
+}
+
+
 .main-container{
   width: 100%;
   display: flex;
@@ -6,7 +12,6 @@
   align-items: center;
   transition: width 1s, height 1s;
 }
-
 .main-container-lite{
   width: 100%;
   display: flex;
@@ -78,8 +83,13 @@
 {
   color: white;
   text-align: center;
-}
+  font-family: wedding;
 
+}
+.event-item
+{
+  height: 100vh;
+}
 .rsvp{
   border-radius: 5px;
   border-color: darkgoldenrod;
@@ -93,5 +103,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 

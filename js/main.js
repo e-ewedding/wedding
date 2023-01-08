@@ -71,11 +71,11 @@ $scope.tableOfContents =
       "5-a-7"
     ],
     fr: [
-      "the gers",
-      "The lake",
-      "Where to eat",
-      "Where to stay",
-      "Timeline"
+      "About",
+      "Accommodation",
+      "Things to do",
+      "The Celebration",
+      "What to bring"
     ]
   };
 
@@ -107,9 +107,9 @@ $scope.tableOfContents =
         $scope.ny.style.width = "50%";
         $scope.fr.style.width = "50%";
         $scope.mtl.style.width = "100%";
-        $scope.ny.style.height = "80vh";
-        $scope.fr.style.height = "80vh";
-        $scope.mtl.style.height = "20vh";
+        $scope.ny.style.height = "calc(100vh - 375px)";
+        $scope.fr.style.height = "calc(100vh - 375px)";
+        $scope.mtl.style.height = "375px";
       }else if($scope.invited('fr') && $scope.invited('ny') && !$scope.invited('mtl'))
       {
         $scope.ny.style.width = "50%";
