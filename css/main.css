@@ -50,6 +50,7 @@
 .navbar-item
 {
   margin: 5px;
+  color:black;
   display: flex;
   align-content: center;
   align-items: center;
@@ -72,7 +73,7 @@
 .mtl{
   background-color: #99a9a6;
 }
-.mtl-navbar
+.navbar-background
 {
   background-color: whitesmoke;
 }

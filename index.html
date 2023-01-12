@@ -12,7 +12,7 @@
     <script src="js/vendor/animate.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="js/vendor/ui-bootstrap-tpls-0.12.1.min.js"></script>
-    <script src="js/vendor/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/vendor/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/rsvpCtrl.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
@@ -20,28 +20,20 @@
 
   <body ng-controller="MainCtrl" style="display: flex;    flex-direction: column; height:100vh; width: 100%">
   <div ng-if="guest" id="authenticatedContainer" style="width: 100%;height: 100vh">
-    <nav id="navbar" class="navbar navbar-default main-container-show-hide" style="margin-bottom: 0!important;" ng-show="selectedEvent !== 'all'">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" style="height: 3.5vh" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="navbar-item" style="background: url('img/back-arrow.svg'); width: 40px; height: 4vh; cursor:pointer; background-repeat: no-repeat;" ng-click="back()"></div>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul ng-class="getFieldClass(selectedEvent)" class="nav navbar-nav">
-          <li ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item " > <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href="index.html#{{item}}-{{selectedEvent}}">{{item}}</a></li>
-          <li class="navbar-item"><a ng-click="openRsvpModal()"  href="#">RSVP</a></li>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" ng-show="selectedEvent !== 'all'">
+      <a style="background: url('img/back-arrow.svg'); height: 40px;width: 40px;  cursor:pointer; background-repeat: no-repeat;" ng-click="back()" class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item" > <a style="color: black" href="index.html#{{item}}-{{selectedEvent}}">{{item}}</a></li>
+          <li class="nav-item navbar-item"><a style="color: black" data-toggle="modal" data-target="#exampleModal"  href="#">RSVP</a></li>
         </ul>
-
-      </div><!-- /.navbar-collapse -->
+      </div>
     </nav>
-    <div id="frAndNyContainer" style="display: flex">
 
+    <div id="frAndNyContainer" style="display: flex">
       <div  id="ny" ng-click="selectEvent('ny')"
             ng-show="invited('ny') &&  (selectedEvent == 'all' || selectedEvent == 'ny')"
             ng-style="guest.invites.length > 2 && {'height':'calc(100vh - 375px)'} || {'height': '100vh'}"
@@ -259,13 +251,10 @@
 
         </div>
       </div>
-
       <div id="hideRsvpSplitter" style="background: linear-gradient(to right, #79b7ba 50%, #eccbbd 50%); display: flex; align-items: center;"
-
            ng-show="selectedEvent == 'all' && guest.invites.length > 1">
-        <div ng-hide="hideRsvp" class="rsvp" ng-click="openRsvpModal()">RSVP</div>
+        <div ng-hide="hideRsvp" class="rsvp" data-toggle="modal" data-target="#exampleModal">RSVP</div>
       </div>
-
       <div id="fr"
            ng-click="selectEvent('fr')"
            ng-show="invited('fr') &&  (selectedEvent == 'all' || selectedEvent == 'fr')"
@@ -444,19 +433,25 @@
     </div>
 
   </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Welcome {{verified.guest}}!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3S9Xrf3e1DnlHNcJsqra-XBwQurr208-4SGHvs3JIqDcNwQ/viewform?embedded=true" width="100%" height="850px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   </body>
-
 </html>
-
-
-    <script type="text/ng-template" id="rsvp.html">
-      <div class="modal-header">
-        <h3 class="modal-title">Welcome {{verified.guest}}!</h3>
-      </div>
-      <div class="modal-body" ng-if="!verified">Please enter your passcode</div>
-      <div class="modal-body" ng-if="verified">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3S9Xrf3e1DnlHNcJsqra-XBwQurr208-4SGHvs3JIqDcNwQ/viewform?embedded=true" width="100%" height="1150px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
-<!--      <input ng-model="password">-->
-<!--      <button ng-click="verify()">Verify</button>-->
-        </script>

@@ -51,7 +51,9 @@
 
       modalInstance.result.then(function (selectedItem) {
         $scope.selected = selectedItem;
-      }, function () {
+      }, function (e)
+      {
+        console.log(e)
       });
     };
 $scope.tableOfContents =
@@ -79,22 +81,27 @@ $scope.tableOfContents =
     ]
   };
 
-    $scope.getFieldClass = function(entry){
-      if ($(window).width() <= 975) {
-        switch (entry)
-        {
-          case "ny":
-            return {"fr": true};
-          case "fr":
-            return {"ny": true};
-          case "mtl":
-            return {"mtl-navbar":true};
-          default:
-            return {};
-        }
-      }
+  $scope.isMobile = function()
+  {
+    return ($(window).width() <= 768)
+  }
 
-    }
+    // $scope.getFieldClass = function(entry){
+    //   if  {
+    //     switch (entry)
+    //     {
+    //       case "ny":
+    //         return {"mtl-navbar": true};
+    //       case "fr":
+    //         return {"mtl-navbar": true};
+    //       case "mtl":
+    //         return {"mtl-navbar":true};
+    //       default:
+    //         return {};
+    //     }
+    //   }
+    //
+    // }
     addEventListener("resize", (event) =>
     {
       if($scope.selectedEvent)
@@ -117,7 +124,7 @@ $scope.tableOfContents =
     });
     $scope.back = function()
     {
-      navbar.style.height = "0vh"
+      // navbar.style.height = "0vh"
       $scope.selectedEvent = 'all'
       $scope.animate = true;
       $scope.hideRsvp = false;
@@ -143,15 +150,8 @@ $scope.tableOfContents =
         $scope[$scope.guest.invites[0]].width = "100%";
         $scope[$scope.guest.invites[0]].height = "100vh";
       }
-
-
-
-
-
-
-
-
     }
+
     $scope.selectEvent = function(event)
     {
       $scope.animate = false;
@@ -163,19 +163,16 @@ $scope.tableOfContents =
           $scope.ny.style.height = "95vh";
           $scope.fr.style.width = "0%";
           $scope.mtl.style.height = "0vh";
-          $scope.navbar.style.height = "5vh"
           break;
         case 'mtl':
           $scope.ny.style.height = "0vh";
           $scope.fr.style.height = "0vh";
           $scope.mtl.style.height = "95vh";
-          $scope.navbar.style.height = "5vh"
           break;
         case 'fr':
           $scope.ny.style.width = "0%";
           $scope.fr.style.width = "100%";
           $scope.fr.style.height = "95vh";
-          $scope.navbar.style.height = "5vh"
           $scope.mtl.style.height = "0vh";
           break;
       }
