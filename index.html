@@ -34,12 +34,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul ng-class="getFieldClass(selectedEvent)" class="nav navbar-nav">
-          <li ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item" > <a href="index.html#{{item}}-{{selectedEvent}}">{{item}}</a></li>
+          <li ng-repeat="item in tableOfContents[selectedEvent]" class="navbar-item " > <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href="index.html#{{item}}-{{selectedEvent}}">{{item}}</a></li>
+          <li class="navbar-item"><a ng-click="openRsvpModal()"  href="#">RSVP</a></li>
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-          <li><a ng-click="openRsvpModal()" href="#">RSVP</a></li>
-        </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
     <div id="frAndNyContainer" style="display: flex">
@@ -433,11 +431,18 @@
     </div>
   </div>
   <div ng-if="!guest" id="unauthenticatedContainer" style="width: 100%;height: 100vh;display: flex; background-color: black;flex-direction: column; justify-content: center;align-items: center;">
-    <div>
+    <div style="color:white; display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 1">
+      <h1 style="font-family: wedding">E & E </h1>
+      <h1 style="font-family: wedding">Wedding</h1>
+    </div>
+    <div style="flex-grow: 1">
       <input ng-model="password.text" placeholder="enter your password">
       <button ng-click="verify()" >submit</button>
+      <p ng-if="invalid" style="color:red">hmm, that password didn't work</p>
     </div>
-    <p ng-if="invalid" style="color:red">hmm, that password didn't work</p>
+    <div style="flex-grow: 1; background: url('img/petrie-transparent.png');background-repeat: repeat-x;width: 100%;height: 15%;">
+    </div>
+
   </div>
   </body>
 

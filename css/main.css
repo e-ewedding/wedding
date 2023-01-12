@@ -1,6 +1,6 @@
 @font-face {
   font-family: wedding;
-  src: url(../RusticWedding.ttf);
+  src: url(../HauteCorniche.ttf);
 }
 
 
@@ -20,10 +20,6 @@
   flex-direction: column;
   align-items: center;}
 
-/*.main-container-show-hide*/
-/*{*/
-/*  transition: width 1s, height 1s;*/
-/*}*/
 .animate-show,
 .animate-hide {
   -webkit-transition:all linear .65s;
@@ -58,6 +54,8 @@
   align-content: center;
   align-items: center;
   justify-content: center;
+  font-size: x-large;
+  font-family: wedding;
 }
 .navbar-container{
   height: 100%; color: white; display: flex;justify-content: flex-start;padding: 0px 10px;

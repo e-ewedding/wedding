@@ -80,7 +80,7 @@ $scope.tableOfContents =
   };
 
     $scope.getFieldClass = function(entry){
-      if ($(window).width() <= 768) {
+      if ($(window).width() <= 975) {
         switch (entry)
         {
           case "ny":
@@ -95,7 +95,26 @@ $scope.tableOfContents =
       }
 
     }
-
+    addEventListener("resize", (event) =>
+    {
+      if($scope.selectedEvent)
+      {
+        if ($(window).width() <= 975) {
+          switch ($scope.selectedEvent)
+          {
+            case "ny":
+              $scope.navbar.style
+              return {"fr": true};
+            case "fr":
+              return {"ny": true};
+            case "mtl":
+              return {"mtl-navbar":true};
+            default:
+              return {};
+          }
+        }
+      }
+    });
     $scope.back = function()
     {
       navbar.style.height = "0vh"
