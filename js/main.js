@@ -5,7 +5,7 @@
     $scope.guestList =
       [
         {name:"Elliot1",pw:"1",invites:["fr"]},
-        {name:"Elliot2",pw:"2",invites:["fr","ny","mtl"]},
+        {name:"Elliot2",pw:"2",invites:["ny"]},
         {name:"Elliot3",pw:"3",invites:["fr","ny"]},
         {name:"Elliot3",pw:"4",invites:["mtl"]},
       ];
@@ -86,45 +86,8 @@ $scope.tableOfContents =
     return ($(window).width() <= 768)
   }
 
-    // $scope.getFieldClass = function(entry){
-    //   if  {
-    //     switch (entry)
-    //     {
-    //       case "ny":
-    //         return {"mtl-navbar": true};
-    //       case "fr":
-    //         return {"mtl-navbar": true};
-    //       case "mtl":
-    //         return {"mtl-navbar":true};
-    //       default:
-    //         return {};
-    //     }
-    //   }
-    //
-    // }
-    addEventListener("resize", (event) =>
-    {
-      if($scope.selectedEvent)
-      {
-        if ($(window).width() <= 975) {
-          switch ($scope.selectedEvent)
-          {
-            case "ny":
-              $scope.navbar.style
-              return {"fr": true};
-            case "fr":
-              return {"ny": true};
-            case "mtl":
-              return {"mtl-navbar":true};
-            default:
-              return {};
-          }
-        }
-      }
-    });
     $scope.back = function()
     {
-      // navbar.style.height = "0vh"
       $scope.selectedEvent = 'all'
       $scope.animate = true;
       $scope.hideRsvp = false;
@@ -147,8 +110,8 @@ $scope.tableOfContents =
       }
       else if($scope.guest.invites.length === 1)
       {
-        $scope[$scope.guest.invites[0]].width = "100%";
-        $scope[$scope.guest.invites[0]].height = "100vh";
+        $scope[$scope.guest.invites[0]].style.width = "100%";
+        $scope[$scope.guest.invites[0]].style.height = "100vh";
       }
     }
 
