@@ -20,7 +20,7 @@
 
   <body ng-controller="MainCtrl" style="display: flex;    flex-direction: column; height:100vh; width: 100%">
   <div ng-if="guest" id="authenticatedContainer" style="width: 100%;height: 100vh">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" ng-show="selectedEvent !== 'all'">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" style="position: absolute;width: 100%;" ng-show="selectedEvent !== 'all'">
       <a style="background: url('img/back-arrow.svg'); height: 40px;width: 40px;  cursor:pointer; background-repeat: no-repeat;" ng-click="back()" class="navbar-brand" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,11 +33,11 @@
       </div>
     </nav>
 
-    <div id="frAndNyContainer" style="display: flex">
+    <div id="frAndNyContainer" class="multi-event-container" style="display: flex">
       <div  id="ny" ng-click="selectEvent('ny')"
             ng-show="invited('ny') &&  (selectedEvent == 'all' || selectedEvent == 'ny')"
-            ng-style="guest.invites.length > 2 && {'height':'calc(100vh - 375px)'} || {'height': '100vh'}"
-            class = "main-container main-container-show-hide ny" >
+            ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
+            class = " main-container-show-hide ny" >
         <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">NY</h1>
           <img src="img/ny-logo-transparent.png">
@@ -251,15 +251,15 @@
 
         </div>
       </div>
-      <div id="hideRsvpSplitter" style="background: linear-gradient(to right, #79b7ba 50%, #eccbbd 50%); display: flex; align-items: center;"
+      <div id="hideRsvpSplitter" class="splitter"
            ng-show="selectedEvent == 'all' && guest.invites.length > 1">
         <div ng-hide="hideRsvp" class="rsvp" data-toggle="modal" data-target="#exampleModal">RSVP</div>
       </div>
       <div id="fr"
            ng-click="selectEvent('fr')"
            ng-show="invited('fr') &&  (selectedEvent == 'all' || selectedEvent == 'fr')"
-           ng-style="guest.invites.length > 2 && {'height':'calc(100vh - 375px)'} || {'height': '100vh'}"
-           class = "main-container main-container-show-hide fr" >
+           ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
+           class = " main-container-show-hide fr" >
         <div id="simpleFr" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">FR</h1>
           <img src="img/fr-logo-transparent.png">
@@ -370,7 +370,6 @@
     <div id="mtl" ng-click="selectEvent('mtl')"
          ng-show="invited('mtl') && (selectedEvent == 'all' || selectedEvent == 'mtl')"
          class="main-container-show-hide mtl"
-         ng-style="guest.invites.length > 1 && {'height':'375px'} || {'height': '100vh'}"
          ng-class="selectedEvent == 'mtl' && {{guest.invites.length}} > 1 ? 'main-container' : 'main-container-lite'" >
       <div ng-show="animate" class="animate-show animate-hide mtl-container" ng-if="selectedEvent == 'all'">
         <h1 ng-show="animate" class="event-header" style="margin-top: 5px;">MTL</h1>

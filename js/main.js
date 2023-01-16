@@ -17,7 +17,7 @@
 
     $scope.password = {text:null}
     $scope.guest = _.find($scope.guestList,{guest:sessionStorage.getItem("guest")}) ? _.find($scope.guestList,{guest:sessionStorage.getItem("guest")}) : false;
-      $scope.verify = function()
+    $scope.verify = function()
     {
       let guest = _.find($scope.guestList,{pw:$scope.password.text})
       if(guest)
@@ -39,6 +39,21 @@
         $scope.invalid = true;
       }
     }
+    let init = function()
+    {
+      if(sessionStorage.getItem("guest"))
+      {
+        $scope.guest = _.find($scope.guestList,{name:sessionStorage.getItem("guest")})
+        $timeout(function()
+        {
+          $scope.ny = document.querySelector('#ny');
+          $scope.fr = document.querySelector('#fr');
+          $scope.mtl = document.querySelector('#mtl');
+          $scope.navbar = document.querySelector('#navbar');
+        })
+      }
+    }
+    init()
     $scope.selectedEvent = 'all'
     $scope.animate = true;
     $scope.openRsvpModal = function()
@@ -83,7 +98,7 @@ $scope.tableOfContents =
 
   $scope.isMobile = function()
   {
-    return ($(window).width() <= 768)
+    return ($(window).width() <= 974)
   }
 
     $scope.back = function()
@@ -91,27 +106,18 @@ $scope.tableOfContents =
       $scope.selectedEvent = 'all'
       $scope.animate = true;
       $scope.hideRsvp = false;
-      if($scope.guest.invites.length === 3)
+
+      if($scope.invited('fr') && $scope.invited('ny') && !$scope.invited('mtl'))
       {
-        $scope.ny.style.width = "50%";
-        $scope.fr.style.width = "50%";
-        $scope.mtl.style.width = "100%";
-        $scope.ny.style.height = "calc(100vh - 375px)";
-        $scope.fr.style.height = "calc(100vh - 375px)";
-        $scope.mtl.style.height = "375px";
-      }else if($scope.invited('fr') && $scope.invited('ny') && !$scope.invited('mtl'))
-      {
-        $scope.ny.style.width = "50%";
-        $scope.fr.style.width = "50%";
-        $scope.mtl.style.width = "0%";
-        $scope.ny.style.height = "100vh";
-        $scope.fr.style.height = "100vh";
-        $scope.mtl.style.height = "0vh";
+        $scope.ny.classList.remove("main-container-expanded")
+        $scope.fr.classList.remove("main-container-expanded")
+        $scope.fr.classList.remove("main-container-shrunk")
+        $scope.ny.classList.remove("main-container-shrunk")
       }
       else if($scope.guest.invites.length === 1)
       {
-        $scope[$scope.guest.invites[0]].style.width = "100%";
-        $scope[$scope.guest.invites[0]].style.height = "100vh";
+        $scope[$scope.guest.invites[0]].classList.remove("main-container-shrunk")
+        $scope[$scope.guest.invites[0]].classList.remove("main-container-expanded")
       }
     }
 
@@ -122,21 +128,12 @@ $scope.tableOfContents =
       switch(event)
       {
         case 'ny':
-          $scope.ny.style.width = "100%";
-          $scope.ny.style.height = "95vh";
-          $scope.fr.style.width = "0%";
-          $scope.mtl.style.height = "0vh";
-          break;
-        case 'mtl':
-          $scope.ny.style.height = "0vh";
-          $scope.fr.style.height = "0vh";
-          $scope.mtl.style.height = "95vh";
+          $scope.ny.classList.add("main-container-expanded")
+          $scope.fr.classList.add("main-container-shrunk")
           break;
         case 'fr':
-          $scope.ny.style.width = "0%";
-          $scope.fr.style.width = "100%";
-          $scope.fr.style.height = "95vh";
-          $scope.mtl.style.height = "0vh";
+          $scope.fr.classList.add("main-container-expanded")
+          $scope.ny.classList.add("main-container-shrunk")
           break;
       }
 
