@@ -6,10 +6,33 @@
       [
         {name:"Elliot1",pw:"1",invites:["fr"]},
         {name:"Elliot2",pw:"2",invites:["ny"]},
-        {name:"Elliot3",pw:"3",invites:["fr","ny"]},
+        {name:"Elliot3",pw:"3",invites:["fr","ny"],vip:true},
         {name:"Elliot3",pw:"4",invites:["mtl"]},
       ];
-
+    $scope.tableOfContents =
+      {
+        ny:
+          [
+            "Springville",
+            "the cabin",
+            "Where to eat",
+            "Where to stay",
+            "Timeline"
+          ],
+        mtl: [
+          "Tubing",
+          "Hot chocolate",
+          "Poutine",
+          "5-a-7"
+        ],
+        fr: [
+          "About",
+          "Accommodation",
+          "Things to do",
+          "The Celebration",
+          "What to bring"
+        ]
+      };
     $scope.invited = function(event)
     {
       return $scope.guest.invites.includes(event);
@@ -22,16 +45,9 @@
       let guest = _.find($scope.guestList,{pw:$scope.password.text})
       if(guest)
       {
-        $scope.guest = guest
         $scope.invalid = false;
-        sessionStorage.setItem("guest",$scope.guest.name)
-        $timeout(function()
-        {
-          $scope.ny = document.querySelector('#ny');
-          $scope.fr = document.querySelector('#fr');
-          $scope.mtl = document.querySelector('#mtl');
-          $scope.navbar = document.querySelector('#navbar');
-        })
+        sessionStorage.setItem("guest",guest.name)
+        loginGuest(guest)
 
       }
       else
@@ -39,18 +55,27 @@
         $scope.invalid = true;
       }
     }
+    function loginGuest(guest)
+    {
+      $scope.guest = guest
+      if(guest.vip)
+      {
+        $scope.tableOfContents.ny.unshift("Niagara")
+      }
+      $timeout(function()
+      {
+        $scope.ny = document.querySelector('#ny');
+        $scope.fr = document.querySelector('#fr');
+        $scope.mtl = document.querySelector('#mtl');
+        $scope.navbar = document.querySelector('#navbar');
+      })
+    }
+
     let init = function()
     {
       if(sessionStorage.getItem("guest"))
       {
-        $scope.guest = _.find($scope.guestList,{name:sessionStorage.getItem("guest")})
-        $timeout(function()
-        {
-          $scope.ny = document.querySelector('#ny');
-          $scope.fr = document.querySelector('#fr');
-          $scope.mtl = document.querySelector('#mtl');
-          $scope.navbar = document.querySelector('#navbar');
-        })
+        loginGuest(_.find($scope.guestList,{name:sessionStorage.getItem("guest")}))
       }
     }
     init()
@@ -71,30 +96,7 @@
         console.log(e)
       });
     };
-$scope.tableOfContents =
-  {
-    ny:
-      [
-        "Springville",
-        "the cabin",
-        "Where to eat",
-        "Where to stay",
-        "Timeline"
-      ],
-    mtl: [
-      "Tubing",
-      "Hot chocolate",
-      "Poutine",
-      "5-a-7"
-    ],
-    fr: [
-      "About",
-      "Accommodation",
-      "Things to do",
-      "The Celebration",
-      "What to bring"
-    ]
-  };
+
 
   $scope.isMobile = function()
   {
