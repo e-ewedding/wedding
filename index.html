@@ -29,7 +29,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav nav mr-auto mt-2 mt-lg-0">
-          <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item" > <a  class="nav-link" href="#{{item}}-{{selectedEvent}}">{{item}}</a></li>
+          <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item" > <a  class="nav-link" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
           <li class="nav-item navbar-item"><a data-toggle="modal" data-target="#exampleModal" style="font-family: wedding" class="nav-link"  href="#">RSVP</a></li>
         </ul>
       </div>
@@ -42,7 +42,8 @@
             class="main-container-show-hide ny" >
         <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">NY</h1>
-          <img src="img/ny-logo-transparent.png">
+          <!-- <img src="img/ny-logo-transparent.svg"> -->
+          <div ng-show="animate" style="background:url('img/ny-logo-transparent.svg');background-repeat:no-repeat;  background-size: cover; width:300px;height: 300px "></div>
         </div>
         <div ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'ny'">
           <div class="event-item" id="Springville-ny" ><h2>Springville</h2> <p>
@@ -86,8 +87,8 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div ng-if="guest.vip" class="event-item" id="Niagara-ny" ><h2>Niagara</h2> <p>for cool cats and kittens only</p></div>
-          <div class="event-item" id="the cabin-ny" ><h2 style="font-family: wedding">The Cabin</h2> <p>
+          <div ng-if="guest.vip" class="event-item" id="Niagara-ny" ><h2>NIAGARA</h2> <p>for cool cats and kittens only</p></div>
+          <div class="event-item" id="the cabin-ny" ><h2 style="font-family: wedding">THE CABIN</h2> <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -128,7 +129,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div class="event-item"  id="Where to eat-ny" > <h2 style="font-family: wedding">Where to Eat</h2><p style="font-family: wedding">
+          <div class="event-item"  id="Where to eat-ny" > <h2 style="font-family: wedding">WHERE TO EAT</h2><p style="font-family: wedding">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -169,7 +170,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div class="event-item"  id="Where to stay-ny" > <h2>Where to Stay</h2><p>
+          <div class="event-item"  id="Where to stay-ny" > <h2>WHERE TO STAY</h2><p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -210,7 +211,7 @@
 
             Phasellus eget elit aliquet, tincidunt massa ac, mollis nisi. Nullam quis ante elit. Sed nulla velit, vestibulum eget elit quis, aliquet gravida felis. Ut ultrices diam ac quam posuere auctor. Vestibulum a lectus eget libero tempor bibendum sit amet in libero. Cras faucibus efficitur erat. Duis a nisl nulla.
           </p></div>
-          <div class="event-item" id="Timeline-ny" ><h2>Timeline</h2> <p>
+          <div class="event-item" id="Timeline-ny" ><h2>TIMELINE</h2> <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
 
             Etiam elit lorem, tincidunt eget risus a, blandit semper lacus. Curabitur aliquam urna lectus, in feugiat orci aliquam eget. Praesent dapibus dui velit, nec pellentesque quam lacinia vitae. Nullam a felis id ex lacinia tincidunt ut a massa. Sed ut molestie orci, non accumsan turpis. Nunc eu ante eu metus sagittis porta. Sed id orci mi. Donec ornare massa id metus malesuada, ut dapibus mauris dapibus. Curabitur condimentum nulla ut lobortis lacinia. In id lacus quis neque suscipit volutpat id id nunc. Nullam dignissim feugiat enim. Nulla laoreet dignissim eros.
@@ -265,10 +266,10 @@
            class = " main-container-show-hide fr" >
         <div id="simpleFr" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">FR</h1>
-          <img src="img/fr-logo-transparent.png">
+          <div ng-show="animate" style="background:url('img/fr-logo-transparent.svg');background-repeat:no-repeat;  background-size: cover; width:300px;height: 300px "></div>
         </div>
         <div id ="detailedFr" style="position: relative;" ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'fr'">
-          <div class="event-item" style="padding-top: 125px" id="About-fr" ><h2>About</h2>
+          <div class="event-item" style="padding-top: 125px" id="About-fr" ><h2>ABOUT</h2>
             <h2>The venue</h2>
             <p>
               Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake
@@ -282,7 +283,7 @@
               Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.
             </p>
           </div>
-          <div class="event-item" id="Accommodation-fr" ><h2>Accommodation</h2>
+          <div class="event-item" id="Accommodation-fr" ><h2>ACCOMMODATION</h2>
             <h2>Château Lacoste</h2>
             <h2>Rooms at the château</h2>
             <p>
@@ -355,7 +356,7 @@
             <p>We’ll start the day with a recovery brunch, and then head down to the lake for a beach day. Don’t forget your beach towels! If beaches and swimming aren’t your thing, there are plenty of other activities on offer at the lake, such as hiking, canoeing and paddle boarding (these can be rented on-site). There’s also a bar/restaurant with great music and cocktails. If you let us know in advance, we can also help you organise other activities such as horse riding, wine and armagnac tasting, visiting local historical sites, day trips, etc.
             </p>
           </div>
-          <div class="event-item" id="What to bring-fr" ><h2>What to bring</h2>
+          <div class="event-item" id="What to bring-fr" ><h2>WHAT TO BRING</h2>
           <h2>Beach towel</h2>
           <h2>
             French culture and etiquette: What to expect
@@ -424,12 +425,12 @@
   <div ng-if="!guest" id="unauthenticatedContainer" style="width: 100%;height: 100vh;display: flex; background-color: black;flex-direction: column; justify-content: center;align-items: center;">
     <div style="color:white; display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 1">
       <h1 style="font-family: wedding">E & E </h1>
-      <h1 style="font-family: wedding">Wedding</h1>
+      <h1 style="font-family: wedding">WEDDING</h1>
     </div>
     <div style="flex-grow: 1;display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <input class="form-control" ng-model="password.text" style="text-align: center; font-family: wedding" placeholder="enter your password">
       <button ng-click="verify()" type="button" style="margin-top: 15px; font-family: wedding" class="btn btn-outline-light">Submit</button>
-      <p ng-if="invalid" style="color:red; font-family: wedding">hmm, that password didn't work</p>
+      <p ng-if="invalid" style="color:red; font-family: wedding">HMM, THAT DIDN'T WORK</p>
     </div>
     <div style="flex-grow: 1; background: url('img/petrie-transparent.png');background-repeat: repeat-x;width: 100%;height: 15%;">
     </div>

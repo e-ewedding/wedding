@@ -103,7 +103,7 @@ h2 {
 .event-item
 {
   min-height: 100vh;
-  padding: 0 12%;
+  padding: 5% 12%;
 }
 .rsvp{
   border-radius: 5px;
@@ -156,6 +156,14 @@ h2 {
     align-items: center;
     transition: width 1s, height 1s;
   }
+  .ny.main-container
+  {
+    padding-top: 20px;
+  }
+  .fr.main-container
+  {
+    padding-bottom: 20px;
+  }
   .main-container-solo
   {
     width: 100%;
@@ -176,6 +184,6 @@ h2 {
   }
   .event-item
   {
-    padding: 0 5%;
+    padding: 10% 5%;
   }
 }
