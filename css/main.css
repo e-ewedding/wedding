@@ -2,10 +2,19 @@
   font-family: wedding;
   src: url(../HauteCorniche.ttf);
 }
+@font-face {
+  font-family: queensides;
+  src: url(../Queensides.ttf);
+}
 
 h2 {
   font-family: wedding
 }
+p
+{
+  font-family: queensides;
+}
+
 .main-container{
   width: 100%;
   height: 100vh;
@@ -61,6 +70,12 @@ h2 {
   height: 100vh;
 }
 
+.event-icon{
+  background-repeat:no-repeat!important;
+  height: 40vh;
+  background-position: center!important;
+  background-size: contain!important;
+}
 .navbar-item
 {
   padding: 0 10px;
@@ -80,11 +95,19 @@ h2 {
 .ny{
   background-color: #79b7ba;
 }
+.ny-text
+{
+  color: #79b7ba !important;
+}
 
 .fr{
   background-color: #eccbbd;
 }
+.fr-text
+{
+  color: #eccbbd !important;
 
+}
 .mtl{
   background-color: #99a9a6;
 }
@@ -104,6 +127,13 @@ h2 {
 {
   min-height: 100vh;
   padding: 5% 12%;
+}
+
+.event-item-header
+{
+  width: fit-content;
+  padding: 10px;
+  background-color: burlywood;
 }
 .rsvp{
   border-radius: 5px;
@@ -185,5 +215,11 @@ h2 {
   .event-item
   {
     padding: 10% 5%;
+  }
+  .event-icon{
+    background-repeat:no-repeat !important;
+    height: 20vh;
+    background-position: center!important;
+    background-size: contain!important;
   }
 }

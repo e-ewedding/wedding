@@ -30,7 +30,10 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav nav mr-auto mt-2 mt-lg-0">
           <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item" > <a  class="nav-link" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
-          <li class="nav-item navbar-item"><a data-toggle="modal" data-target="#exampleModal" style="font-family: wedding" class="nav-link"  href="#">RSVP</a></li>
+          <li class="nav-item navbar-item">
+            <a
+              ng-class="{{selectedEvent}} === 'fr' ? 'fr-text' : 'ny-text'"
+              data-toggle="modal" data-target="#exampleModal" style="font-family: wedding" class="nav-link"  href="#">RSVP</a></li>
         </ul>
       </div>
     </nav>
@@ -40,10 +43,11 @@
             ng-show="invited('ny') &&  (selectedEvent == 'all' || selectedEvent == 'ny')"
             ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
             class="main-container-show-hide ny" >
-        <div ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-          <h1 class="event-header">NY</h1>
+        <div ng-show="animate" style="display: flex;flex-direction: column" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
+          <h1 class="event-header">NEW YORK</h1>
+          <h1 class="event-header">OCTOBER 8 2023</h1>
           <!-- <img src="img/ny-logo-transparent.svg"> -->
-          <div ng-show="animate" style="background:url('img/ny-logo-transparent.svg');background-repeat:no-repeat;  background-size: cover; width:300px;height: 300px "></div>
+          <div ng-show="animate" class="event-icon" style="background:url('img/ny-logo-transparent.svg');"></div>
         </div>
         <div ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'ny'">
           <div class="event-item" id="Springville-ny" ><h2>Springville</h2> <p>
@@ -264,26 +268,24 @@
            ng-show="invited('fr') &&  (selectedEvent == 'all' || selectedEvent == 'fr')"
            ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
            class = " main-container-show-hide fr" >
-        <div id="simpleFr" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-          <h1 class="event-header">FR</h1>
-          <div ng-show="animate" style="background:url('img/fr-logo-transparent.svg');background-repeat:no-repeat;  background-size: cover; width:300px;height: 300px "></div>
+        <div id="simpleFr" style="display: flex;flex-direction: column" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
+          <h1 class="event-header">FRANCE</h1>
+          <h1 class="event-header">JUNE 25 2024</h1>
+          <div ng-show="animate" class="event-icon" style="background:url('img/fr-logo-transparent.svg')"></div>
         </div>
         <div id ="detailedFr" style="position: relative;" ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'fr'">
-          <div class="event-item" style="padding-top: 125px" id="About-fr" ><h2>ABOUT</h2>
-            <h2>The venue</h2>
-            <p>
-              Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake
-            </p>
-            <h2>About the Gers</h2>
-            <p>
-              The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture.
-            </p>
-            <h2>About Lupiac</h2>
-            <p>
-              Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.
-            </p>
+          <div class="event-item" style="padding-top: 125px" id="About-fr" >
+            <event-item
+            content="getContent('fr','ABOUT')"
+            right="false"></event-item>
           </div>
-          <div class="event-item" id="Accommodation-fr" ><h2>ACCOMMODATION</h2>
+          <div class="event-item" id="Accommodation-fr" >
+            <event-item
+              content="getContent('fr','ACCOMMODATION')"
+              right="true"></event-item>
+
+
+            <h2>ACCOMMODATION</h2>
             <h2>Château Lacoste</h2>
             <h2>Rooms at the château</h2>
             <p>
@@ -377,7 +379,7 @@
          ng-class="selectedEvent == 'mtl' && {{guest.invites.length}} > 1 ? 'main-container' : 'main-container-lite'" >
       <div ng-show="animate" class="animate-show animate-hide mtl-container" ng-if="selectedEvent == 'all'">
         <h1 ng-show="animate" class="event-header" style="margin-top: 5px;">MTL</h1>
-        <div ng-show="animate" style="background:url('img/mtl-logo-transparent.svg');background-repeat:no-repeat;  background-size: cover; width:300px;height: 300px "></div>
+        <div ng-show="animate" style="background:url('img/mtl-logo-transparent.svg');background-repeat:no-repeat;  background-size: contain; width:325px;height: 325px "></div>
       </div>
       <div ng-show="!animate" class="details" ng-if="selectedEvent === 'mtl'">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor elit nec fringilla posuere. Pellentesque ullamcorper vestibulum sem id dignissim. Nunc sagittis lobortis rutrum. Vivamus sed lorem id felis porta tincidunt et quis metus. In hac habitasse platea dictumst. Aliquam luctus metus vel turpis fringilla euismod. Nam eu massa ac lectus facilisis dignissim vel eget sapien.
@@ -428,7 +430,7 @@
       <h1 style="font-family: wedding">WEDDING</h1>
     </div>
     <div style="flex-grow: 1;display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      <input class="form-control" ng-model="password.text" style="text-align: center; font-family: wedding" placeholder="ENTER YOUR PASSWORD">
+      <input class="form-control" ng-model="password.text" style="text-align: center; font-family: wedding" placeholder="PASSWORD">
       <button ng-click="verify()" type="button" style="margin-top: 15px; font-family: wedding" class="btn btn-outline-light">SUBMIT</button>
       <p ng-if="invalid" style="color:red; font-family: wedding">HMM, THAT DIDN'T WORK</p>
     </div>
@@ -458,3 +460,36 @@
 
   </body>
 </html>
+
+<script type="text/ng-template" id="eventItem.html">
+  <div>
+    <h1 style="font-family: wedding">{{content.section}}</h1>
+    <div ng-repeat="item in content.content" style="display: flex; flex-direction: column; padding: 20px 0"
+         ng-style="{{right}} && {'align-items':'end'}">
+      <h2 class="event-item-header">{{item.title}}</h2>
+      <div style="display: flex;flex-direction: row">
+        <div ng-if="!right">
+          <img src="favicon.ico">
+        </div>
+        <p style="margin: auto">{{item.text}} </p>
+        <div ng-if="right">
+          <img src="favicon.ico">
+        </div>
+      </div>
+    </div>
+
+<!--    <h2>The venue</h2>-->
+<!--    <p>-->
+<!--      Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake-->
+<!--    </p>-->
+<!--    <h2>About the Gers</h2>-->
+<!--    <p>-->
+<!--      The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture.-->
+<!--    </p>-->
+<!--    <h2>About Lupiac</h2>-->
+<!--    <p>-->
+<!--      Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.-->
+<!--    </p>-->
+  </div>
+
+</script>

@@ -33,6 +33,56 @@
           "What to bring"
         ]
       };
+    $scope.detailsFr =
+      [
+        {
+        section:'ABOUT',
+        content:
+          [
+            {
+              title:'THE VENUE',
+              text:'Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake '
+            },
+            {
+              title:'ABOUT THE GERS',
+              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture. '
+            },
+            {
+              title:'ABOUT LUPIAC',
+              text:'Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.  '
+            },
+          ]
+        },
+        {
+          section: 'ACCOMMODATION',
+          content:
+            [
+              {
+                title:'Château Lacoste',
+                text: 'placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text '
+              },
+              {
+                title: 'Rooms at the château',
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. '
+              },
+              {
+                title: 'Nearby accommodation',
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations: '
+              }
+            ]
+        }
+      ]
+
+$scope.getContent = function(event,section)
+    {
+     switch (event)
+     {
+       case 'fr':
+         return _.find($scope.detailsFr,{section})
+     }
+    }
+
+
     $scope.invited = function(event)
     {
       return $scope.guest.invites.includes(event);
@@ -144,5 +194,22 @@
         },
         1000)
     }
-  });
+  })
+    .directive("eventItem", function () {
+      return {
+        restrict: "E",
+        templateUrl: "eventItem.html",
+        replace:true,
+        scope: {
+          icon: "=",
+          text: "=",
+          title: "=",
+          right: "=",
+          content: "=",
+        },
+        link: function ($scope) {
+          console.log($scope.content)
+        }
+      }
+    });
 })(window);
