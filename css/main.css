@@ -18,6 +18,8 @@ p
 .main-container{
   width: 100%;
   height: 100vh;
+  cursor: pointer;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -73,8 +75,13 @@ p
 .event-icon{
   background-repeat:no-repeat!important;
   height: 40vh;
+  transition: all 1.3s ease-in-out 0s;
   background-position: center!important;
   background-size: contain!important;
+}
+.event-icon:hover {
+  transform: rotate(360deg);
+  transition: all 1.3s ease-in-out 0s;
 }
 .navbar-item
 {
@@ -183,6 +190,7 @@ p
     display: flex;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
     align-items: center;
     transition: width 1s, height 1s;
   }
