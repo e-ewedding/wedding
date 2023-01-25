@@ -21,7 +21,7 @@
   </head>
 
   <body ng-controller="MainCtrl" style="display: flex;    flex-direction: column; height:100vh; width: 100%">
-  <div ng-if="guest" id="authenticatedContainer" style="width: 100%;height: 100vh">
+  <div ng-if="guest" class="hand-pointer" id="authenticatedContainer" style="width: 100%;height: 100vh">
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-0" style="position: absolute;width: 100%;" ng-show="selectedEvent !== 'all'">
       <a style="background: url('img/back-arrow.svg'); height: 40px;width: 40px;  cursor:pointer; background-repeat: no-repeat;" ng-click="back()" class="navbar-brand" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

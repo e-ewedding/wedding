@@ -6,6 +6,10 @@
   font-family: queensides;
   src: url(../Queensides.ttf);
 }
+.hand-pointer
+{
+  cursor:url('../img/pointer-tiny2.png'), auto
+}
 
 h2 {
   font-family: wedding
@@ -18,7 +22,6 @@ p
 .main-container{
   width: 100%;
   height: 100vh;
-  cursor: pointer;
 
   display: flex;
   justify-content: center;
@@ -205,7 +208,6 @@ p
     display: flex;
     justify-content: center;
     flex-direction: column;
-    cursor: pointer;
     align-items: center;
     transition: width 1s, height 1s;
   }
