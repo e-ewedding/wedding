@@ -118,6 +118,7 @@ $scope.getContent = function(event,section)
         $scope.fr = document.querySelector('#fr');
         $scope.mtl = document.querySelector('#mtl');
         $scope.navbar = document.querySelector('#navbar');
+        $scope.rsvp = document.querySelector('#rsvp');
       })
     }
 
@@ -171,6 +172,14 @@ $scope.getContent = function(event,section)
         $scope[$scope.guest.invites[0]].classList.remove("main-container-shrunk")
         $scope[$scope.guest.invites[0]].classList.remove("main-container-expanded")
       }
+      if($scope.selectedEvent === "ny")
+      {
+        $scope.rsvp.classList.remove("ny-text")
+
+      }else
+      {
+        $scope.rsvp.classList.remove("fr-text")
+      }
     }
 
     $scope.selectEvent = function(event)
@@ -182,10 +191,12 @@ $scope.getContent = function(event,section)
         case 'ny':
           $scope.ny.classList.add("main-container-expanded")
           $scope.fr.classList.add("main-container-shrunk")
+          $scope.rsvp.classList.add("fr-text")
           break;
         case 'fr':
           $scope.fr.classList.add("main-container-expanded")
           $scope.ny.classList.add("main-container-shrunk")
+          $scope.rsvp.classList.add("ny-text")
           break;
       }
 

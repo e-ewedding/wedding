@@ -21,9 +21,9 @@
   </head>
 
   <body ng-controller="MainCtrl" style="display: flex;    flex-direction: column; height:100vh; width: 100%">
-  <div ng-if="guest" class="hand-pointer" id="authenticatedContainer" style="width: 100%;height: 100vh">
+  <div ng-if="guest"  id="authenticatedContainer" style="width: 100%;height: 100vh">
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-0" style="position: absolute;width: 100%;" ng-show="selectedEvent !== 'all'">
-      <a style="background: url('img/back-arrow.svg'); height: 40px;width: 40px;  cursor:pointer; background-repeat: no-repeat;" ng-click="back()" class="navbar-brand" href="#"></a>
+      <a style="background: url('img/back-tiny.png') center; height: 40px;width: 40px;   background-repeat: no-repeat;" ng-click="back()" class="navbar-brand" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,8 +31,7 @@
         <ul class="navbar-nav nav mr-auto mt-2 mt-lg-0">
           <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item" > <a  class="nav-link" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
           <li class="nav-item navbar-item">
-            <a
-              ng-class="{{selectedEvent}} === 'fr' ? 'fr-text' : 'ny-text'"
+            <a id="rsvp"
               data-toggle="modal" data-target="#exampleModal" style="font-family: wedding" class="nav-link"  href="#">RSVP</a></li>
         </ul>
       </div>
@@ -259,10 +258,6 @@
 
         </div>
       </div>
-      <div id="hideRsvpSplitter" class="splitter"
-           ng-show="selectedEvent == 'all' && guest.invites.length > 1">
-        <button type="button" data-toggle="modal" data-target="#exampleModal" ng-hide="hideRsvp" class="btn btn-secondary btn-lg">RSVP</button>
-      </div>
       <div id="fr"
            ng-click="selectEvent('fr')"
            ng-show="invited('fr') &&  (selectedEvent == 'all' || selectedEvent == 'fr')"
@@ -271,7 +266,7 @@
         <div id="simpleFr" style="display: flex;flex-direction: column" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">FRANCE</h1>
           <h1 class="event-header">JUNE 25 2024</h1>
-          <div ng-show="animate" class="event-icon" style="background:url('img/fr-logo-transparent.svg')"></div>
+          <div ng-show="animate" class="event-icon" style="background:url('img/fr-logo-transparent.svg'); width: 20vh;"></div>
         </div>
         <div id ="detailedFr" style="position: relative;" ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'fr'">
           <div class="event-item" style="padding-top: 125px" id="About-fr" >
