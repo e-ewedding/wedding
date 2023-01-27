@@ -13,11 +13,10 @@
       {
         ny:
           [
-            "Springville",
-            "the cabin",
-            "Where to eat",
-            "Where to stay",
-            "Timeline"
+            "About",
+            "Accommodation",
+            "Things to do",
+            "The Celebration"
           ],
         mtl: [
           "Tubing",
@@ -30,7 +29,7 @@
           "Accommodation",
           "Things to do",
           "The Celebration",
-          "What to bring"
+          "Information"
         ]
       };
     $scope.detailsFr =
@@ -41,15 +40,18 @@
           [
             {
               title:'THE VENUE',
-              text:'Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake '
+              text:'Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake ',
+              icon: 'img/castle.png'
             },
             {
               title:'ABOUT THE GERS',
-              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture. '
+              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture. ',
+              icon: 'img/fleurdelis.png'
             },
             {
               title:'ABOUT LUPIAC',
-              text:'Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.  '
+              text:'Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.  ',
+              icon: 'img/village.png'
             },
           ]
         },
@@ -58,28 +60,129 @@
           content:
             [
               {
-                title:'Château Lacoste',
-                text: 'placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text '
+                title: 'Rooms at the château'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/heart-key.png'
               },
               {
-                title: 'Rooms at the château',
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. '
-              },
-              {
-                title: 'Nearby accommodation',
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations: '
+                title: 'Nearby accommodation'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/hostel.png'
               }
             ]
+        },
+        {
+          section: 'THINGS TO DO',
+          content:
+            [
+              {
+                title: 'Local gastronomy'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/heart-key.png'
+              },
+              {
+                title: 'Restaurants & markets'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/hostel.png'
+              },
+              {
+                title: 'Lakes and water parks'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/wave.png'
+              },
+              {
+                title: 'Wine & armagnac tasting'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/winetasting.png'
+              },
+              {
+                title: 'Nearby towns, medieval villages, historical sites'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/compass.png'
+              },
+              {
+                title: 'Day trips'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/backpack.png'
+              },
+            ]
+        },
+        {
+          section: 'THE CELEBRATION',
+          content:
+            [
+              {
+                title: 'Day 1: Welcome'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/cheese.png'
+              },
+              {
+                title: 'Day 2: The main event'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/party.png'
+              },
+              {
+                title: 'Battle of the Guests'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/battle.png'
+              },
+              {
+                title: 'The Ceremony'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/confetti.png'
+              },
+              {
+                title: 'Day 3: Beach day'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/bikini.png'
+              }
+            ]
+        },
+        {section: 'INFORMATION',
+          content:
+            [
+              {
+                title: "FRENCH CULTURE",
+                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                icon: "img/croissant.png"
+              },{
+                title: "CAR RENTALS",
+                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                icon: "img/car.png"
+              },{
+                title: "ONWARDS TRAVEL",
+                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                icon: "img/luggage.png"
+              },
+            ]
         }
+      ];
+
+    $scope.detailsNy =
+      [
+        {
+          section:'THINGS TO DO',
+          content:
+            [
+              {
+                title:'THE VENUE',
+                icon:'img/niagara.png',
+                text:'Go on a boat ride to the base of Niagara Falls and feel the power of the falls up close. The Maid of the Mist is a must-do for any Niagara Falls trip. Just make sure you bring a change of clothes, because you will get absolutely soaked!'
+              },
+
+            ]
+        },
       ]
 
 $scope.getContent = function(event,section)
     {
-     switch (event)
-     {
-       case 'fr':
-         return _.find($scope.detailsFr,{section})
-     }
+       switch (event)
+       {
+         case 'fr':
+           return _.find($scope.detailsFr,{section});
+         case 'ny':
+           return _.find($scope.detailsNy,{section});
+       }
     }
 
 
@@ -110,7 +213,7 @@ $scope.getContent = function(event,section)
       $scope.guest = guest
       if(guest.vip)
       {
-        $scope.tableOfContents.ny.unshift("Niagara")
+        $scope.tableOfContents.ny.splice(3,0,"Niagara")
       }
       $timeout(function()
       {

@@ -144,7 +144,10 @@ p
 {
   width: fit-content;
   padding: 10px;
-  background-color: burlywood;
+  background-color: #da5623;
+  font-family: wedding;
+  color: #eccbbd;
+  border-radius: 15px;
 }
 .rsvp{
   border-radius: 5px;
