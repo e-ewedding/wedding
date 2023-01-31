@@ -8,6 +8,11 @@
 }
 @font-face {
   font-family: modernprestige;
+  src: url(../modernprestige.otf);
+}
+
+@font-face {
+  font-family: boulogne;
   src: url(../Boulogne.ttf);
 }
 
@@ -79,6 +84,7 @@ p
 .event-icon{
   background-repeat:no-repeat!important;
   height: 40vh;
+  width: 40vh;
   transition: all 1.3s ease-in-out 0s;
   background-position: center!important;
   background-size: contain!important;
@@ -153,18 +159,18 @@ p
 {
   width: fit-content;
   padding: 10px;
-  background-color: #FFDE59;
-  font-family: modernprestige;
-  color: #79b7ba;
+  font-family: boulogne;
+  font-weight: bolder;
+  color: #FFDE59;
   border-radius: 15px;
 }
 .event-item-header-fr
 {
   width: fit-content;
   padding: 10px;
-  background-color: #da5623;
-  font-family: modernprestige;
-  color: #eccbbd;
+  font-weight: bolder;
+  font-family: boulogne;
+  color: #da5623;
   border-radius: 15px;
 }
 .rsvp{
@@ -266,6 +272,7 @@ p
   .event-icon{
     background-repeat:no-repeat !important;
     height: 20vh;
+    width: 20vh;
     z-index: 1;
     background-position: center!important;
     background-size: contain!important;

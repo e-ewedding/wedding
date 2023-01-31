@@ -42,18 +42,18 @@
             ng-show="invited('ny') &&  (selectedEvent == 'all' || selectedEvent == 'ny')"
             ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
             class="main-container-show-hide ny" >
-        <div ng-show="animate" style="display: flex;flex-direction: column" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
+        <div ng-show="animate" style="display: flex;flex-direction: column;align-items: center;" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">NEW YORK</h1>
           <h1 class="event-header">OCTOBER 8 2023</h1>
           <!-- <img src="img/ny-logo-transparent.svg"> -->
           <div ng-show="animate" class="event-icon" style="background:url('img/ny-logo-transparent.svg');"></div>
         </div>
         <div ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'ny'">
-          <div class="event-item" id="About-ny" >
+          <div class="event-item" style="padding-top: 125px"  id="About-ny" >
             <event-item
               content="getContent('ny','ABOUT')"
               selected-event="'ny'"
-              right="true"></event-item>
+              right="false"></event-item>
           </div>
           <div  class="event-item" id="Accommodation-ny" >
             <event-item
@@ -87,7 +87,7 @@
            ng-show="invited('fr') &&  (selectedEvent == 'all' || selectedEvent == 'fr')"
            ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
            class = " main-container-show-hide fr" >
-        <div id="simpleFr" style="display: flex;flex-direction: column" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
+        <div id="simpleFr" style="display: flex;flex-direction: column;align-items: center;" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">FRANCE</h1>
           <h1 class="event-header">JUNE 25 2024</h1>
           <div ng-show="animate" class="event-icon" style="background:url('img/fr-logo-transparent.svg');"></div>
@@ -180,8 +180,7 @@
   </div>
   <div ng-if="!guest" id="unauthenticatedContainer" style="width: 100%;height: 100vh;display: flex; background-color: black;flex-direction: column; justify-content: center;align-items: center;">
     <div style="color:white; display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 1">
-      <h1 style="font-family: wedding">E & E </h1>
-      <h1 style="font-family: wedding">WEDDING</h1>
+      <h1 style="font-size: 3em; font-family: modernprestige">e & e </h1>
     </div>
     <div style="flex-grow: 1;display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <input class="form-control" ng-model="password.text" style="text-align: center; font-family: wedding" placeholder="PASSWORD">
@@ -217,7 +216,8 @@
 
 <script type="text/ng-template" id="eventItem.html">
   <div>
-    <h1 style="font-family: wedding">{{content.section}}</h1>
+    <h1 ng-if="selectedEvent === 'ny'" style="font-family: boulogne" class="ny-text-secondary">{{content.section}}</h1>
+    <h1 ng-if="selectedEvent === 'fr'" style="font-family: boulogne" class="fr-text-secondary">{{content.section}}</h1>
     <div ng-repeat="item in content.content" style="display: flex; flex-direction: column; padding: 20px 0"
          ng-style="{{right}} && {'align-items':'end'}">
       <h4 ng-if="selectedEvent === 'ny'" class="event-item-header-ny">{{item.title}}</h4>
@@ -226,7 +226,8 @@
         <div ng-if="!right">
           <img src="{{item.icon}}">
         </div>
-        <p style="margin: auto; padding: 0 10px;">{{item.text}} </p>
+        <p ng-if="selectedEvent === 'ny'" style="color: white; margin: auto; padding: 0 10px;">{{item.text}} </p>
+        <p ng-if="selectedEvent === 'fr'" style="color: black; margin: auto; padding: 0 10px;">{{item.text}} </p>
         <div ng-if="right">
           <img src="{{item.icon}}">
         </div>
