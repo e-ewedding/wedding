@@ -6,6 +6,10 @@
   font-family: queensides;
   src: url(../AnticDidone-Regular.ttf);
 }
+@font-face {
+  font-family: modernprestige;
+  src: url(../Boulogne.ttf);
+}
 
 
 h2 {
@@ -150,7 +154,7 @@ p
   width: fit-content;
   padding: 10px;
   background-color: #FFDE59;
-  font-family: wedding;
+  font-family: modernprestige;
   color: #79b7ba;
   border-radius: 15px;
 }
@@ -159,7 +163,7 @@ p
   width: fit-content;
   padding: 10px;
   background-color: #da5623;
-  font-family: wedding;
+  font-family: modernprestige;
   color: #eccbbd;
   border-radius: 15px;
 }
