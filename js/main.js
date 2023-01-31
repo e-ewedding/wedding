@@ -78,12 +78,12 @@
               {
                 title: 'Local gastronomy'.toUpperCase(),
                 text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
-                icon: 'img/heart-key.png'
+                icon: 'img/cutlery.png'
               },
               {
                 title: 'Restaurants & markets'.toUpperCase(),
                 text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/hostel.png'
+                icon: 'img/waiter.png'
               },
               {
                 title: 'Lakes and water parks'.toUpperCase(),
@@ -157,22 +157,123 @@
             ]
         }
       ];
-
     $scope.detailsNy =
       [
         {
-          section:'THINGS TO DO',
+        section:'ABOUT',
+        content:
+          [
+            {
+              title:'THE VENUE',
+              text:'Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake ',
+              icon: 'img/cabin.png'
+            },
+            {
+              title:'BUFFALO',
+              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture. ',
+              icon: 'img/buffalo.png'
+            }
+          ]
+        },
+        {
+          section: 'ACCOMMODATION',
           content:
             [
               {
-                title:'THE VENUE',
-                icon:'img/niagara.png',
-                text:'Go on a boat ride to the base of Niagara Falls and feel the power of the falls up close. The Maid of the Mist is a must-do for any Niagara Falls trip. Just make sure you bring a change of clothes, because you will get absolutely soaked!'
+                title: 'hotel options'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/hotel.png'
               },
-
+              {
+                title: 'The Best Western'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/3star-hotel.png'
+              },
+              {
+                title: 'The Lenox Hotel'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/2star-hotel.png'
+              }
             ]
         },
-      ]
+        {
+          section: 'THINGS TO DO',
+          content:
+            [
+              {
+                title: 'Buffalo Botanical Gardens'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/plant.png'
+              },
+              {
+                title: 'The Martin House'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/museum.png'
+              },
+              {
+                title: 'Niagara Falls'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/waterfall.png'
+              }
+            ]
+        },
+        {
+          section: 'THE CELEBRATION',
+          content:
+            [
+              {
+                title: 'The main event'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/chicken-wing.png'
+              },
+              {
+                title: 'Timeline'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/timeline.png'
+              }
+            ]
+        },{
+          section: 'NIAGARA',
+          content:
+            [
+              {
+                title: 'Family Trip: The Falls'.toUpperCase(),
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                icon: 'img/group.png'
+              },
+              {
+                title: 'Niagara-on-the-lake: Whisky, Wine & Goats'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/whiskey.png'
+              },
+              {
+                title: 'dinner'.toUpperCase(),
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                icon: 'img/plate.png'
+              }
+            ]
+        },
+        {section: 'INFORMATION',
+          content:
+            [
+              {
+                title: "FRENCH CULTURE",
+                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                icon: "img/croissant.png"
+              },{
+                title: "CAR RENTALS",
+                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                icon: "img/car.png"
+              },{
+                title: "ONWARDS TRAVEL",
+                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                icon: "img/luggage.png"
+              },
+            ]
+        }
+      ];
+
+
 
 $scope.getContent = function(event,section)
     {
@@ -277,11 +378,11 @@ $scope.getContent = function(event,section)
       }
       if($scope.selectedEvent === "ny")
       {
-        $scope.rsvp.classList.remove("ny-text")
+        $scope.rsvp.classList.remove("ny-text-secondary")
 
       }else
       {
-        $scope.rsvp.classList.remove("fr-text")
+        $scope.rsvp.classList.remove("fr-text-secondary")
       }
     }
 
@@ -294,12 +395,12 @@ $scope.getContent = function(event,section)
         case 'ny':
           $scope.ny.classList.add("main-container-expanded")
           $scope.fr.classList.add("main-container-shrunk")
-          $scope.rsvp.classList.add("fr-text")
+          $scope.rsvp.classList.add("ny-text-secondary")
           break;
         case 'fr':
           $scope.fr.classList.add("main-container-expanded")
           $scope.ny.classList.add("main-container-shrunk")
-          $scope.rsvp.classList.add("ny-text")
+          $scope.rsvp.classList.add("fr-text-secondary")
           break;
       }
 
@@ -317,6 +418,7 @@ $scope.getContent = function(event,section)
         scope: {
           icon: "=",
           text: "=",
+          selectedEvent: "=",
           title: "=",
           right: "=",
           content: "=",

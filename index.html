@@ -50,21 +50,34 @@
         </div>
         <div ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'ny'">
           <div class="event-item" id="About-ny" >
-
+            <event-item
+              content="getContent('ny','ABOUT')"
+              selected-event="'ny'"
+              right="true"></event-item>
           </div>
-          <div ng-if="guest.vip" class="event-item" id="Accommodation-ny" >
-
+          <div  class="event-item" id="Accommodation-ny" >
+            <event-item
+              content="getContent('ny','ACCOMMODATION')"
+              selected-event="'ny'"
+              right="true"></event-item>
           </div>
           <div class="event-item" id="Things to do-ny" >
             <event-item
               content="getContent('ny','THINGS TO DO')"
+              selected-event="'ny'"
               right="false"></event-item>
           </div>
-          <div class="event-item"  id="Niagara-ny" >
-
+          <div ng-if="guest.vip" class="event-item"  id="Niagara-ny" >
+            <event-item
+              content="getContent('ny','NIAGARA')"
+              selected-event="'ny'"
+              right="true"></event-item>
           </div>
           <div class="event-item"  id="The Celebration-ny" >
-
+            <event-item
+              content="getContent('ny','THE CELEBRATION')"
+              selected-event="'ny'"
+              right="true"></event-item>
           </div>
 
         </div>
@@ -83,26 +96,31 @@
           <div class="event-item" style="padding-top: 125px" id="About-fr" >
             <event-item
             content="getContent('fr','ABOUT')"
+            selected-event="'fr'"
             right="false"></event-item>
           </div>
           <div class="event-item" id="Accommodation-fr" >
             <event-item
               content="getContent('fr','ACCOMMODATION')"
+              selected-event="'fr'"
               right="true"></event-item>
           </div>
           <div class="event-item"  id="Things to do-fr" >
             <event-item
               content="getContent('fr','THINGS TO DO')"
+              selected-event="'fr'"
               right="false"></event-item>
           </div>
           <div class="event-item"  id="The Celebration-fr" >
             <event-item
               content="getContent('fr','THE CELEBRATION')"
+              selected-event="'fr'"
               right="true"></event-item>
           </div>
           <div class="event-item" id="Information-fr" >
             <event-item
               content="getContent('fr','INFORMATION')"
+              selected-event="'fr'"
               right="false"></event-item>
           </div>
         </div>
@@ -202,7 +220,8 @@
     <h1 style="font-family: wedding">{{content.section}}</h1>
     <div ng-repeat="item in content.content" style="display: flex; flex-direction: column; padding: 20px 0"
          ng-style="{{right}} && {'align-items':'end'}">
-      <h2 class="event-item-header">{{item.title}}</h2>
+      <h2 ng-if="selectedEvent === 'ny'" class="event-item-header-ny">{{item.title}}</h2>
+      <h2 ng-if="selectedEvent === 'fr'" class="event-item-header-fr">{{item.title}}</h2>
       <div style="display: flex;flex-direction: row">
         <div ng-if="!right">
           <img src="{{item.icon}}">

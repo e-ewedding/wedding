@@ -4,12 +4,9 @@
 }
 @font-face {
   font-family: queensides;
-  src: url(../Queensides.ttf);
+  src: url(../AnticDidone-Regular.ttf);
 }
-.hand-pointer
-{
-  cursor:url('../img/pointer-tiny2.png'), auto
-}
+
 
 h2 {
   font-family: wedding
@@ -109,6 +106,10 @@ p
 {
   color: #79b7ba !important;
 }
+.ny-text-secondary
+{
+  color: #FFDE59 !important;
+}
 
 .fr{
   background-color: #eccbbd;
@@ -116,8 +117,13 @@ p
 .fr-text
 {
   color: #eccbbd !important;
-
 }
+.fr-text-secondary
+{
+  color: #da5623 !important;
+}
+
+
 .mtl{
   background-color: #99a9a6;
 }
@@ -136,11 +142,19 @@ p
 }
 .event-item
 {
-  min-height: 100vh;
   padding: 5% 12%;
 }
 
-.event-item-header
+.event-item-header-ny
+{
+  width: fit-content;
+  padding: 10px;
+  background-color: #FFDE59;
+  font-family: wedding;
+  color: #79b7ba;
+  border-radius: 15px;
+}
+.event-item-header-fr
 {
   width: fit-content;
   padding: 10px;
