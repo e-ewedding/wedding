@@ -220,8 +220,8 @@
     <h1 style="font-family: wedding">{{content.section}}</h1>
     <div ng-repeat="item in content.content" style="display: flex; flex-direction: column; padding: 20px 0"
          ng-style="{{right}} && {'align-items':'end'}">
-      <h2 ng-if="selectedEvent === 'ny'" class="event-item-header-ny">{{item.title}}</h2>
-      <h2 ng-if="selectedEvent === 'fr'" class="event-item-header-fr">{{item.title}}</h2>
+      <h4 ng-if="selectedEvent === 'ny'" class="event-item-header-ny">{{item.title}}</h4>
+      <h4 ng-if="selectedEvent === 'fr'" class="event-item-header-fr">{{item.title}}</h4>
       <div style="display: flex;flex-direction: row">
         <div ng-if="!right">
           <img src="{{item.icon}}">
