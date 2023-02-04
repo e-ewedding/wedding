@@ -83,7 +83,7 @@
               {
                 title: 'Restaurants & markets'.toUpperCase(),
                 text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/waiter.png'
+                icon: 'img/duck.png'
               },
               {
                 title: 'Lakes and water parks'.toUpperCase(),
@@ -98,12 +98,12 @@
               {
                 title: 'Nearby towns, medieval villages, historical sites'.toUpperCase(),
                 text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/compass.png'
+                icon: 'img/map-point.png'
               },
               {
                 title: 'Day trips'.toUpperCase(),
                 text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/backpack.png'
+                icon: 'img/compass.png'
               },
             ]
         },
