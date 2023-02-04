@@ -40,7 +40,7 @@ p
 .main-container{
   width: 100%;
   height: 100vh;
-
+  cursor: pointer;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -91,6 +91,7 @@ p
 {
   overflow: scroll;
   height: 100vh;
+  cursor: auto;
 }
 
 .event-icon{
@@ -171,7 +172,7 @@ p
 }
 .event-item
 {
-  padding: 5% 12%;
+  padding: 2% 12%;
 }
 
 .event-item-header-ny
