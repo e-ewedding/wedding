@@ -3,6 +3,14 @@
   src: url(../HauteCorniche.ttf);
 }
 @font-face {
+  font-family: paris;
+  src: url(../paris.ttf);
+}
+@font-face {
+  font-family: zabata;
+  src: url(../zabata.ttf);
+}
+@font-face {
   font-family: queensides;
   src: url(../AnticDidone-Regular.ttf);
 }
@@ -15,6 +23,10 @@
   font-family: boulogne;
   src: url(../Boulogne.ttf);
 }
+@font-face {
+  font-family: dafont;
+  src: url(../thin.otf);
+}
 
 
 h2 {
@@ -22,7 +34,7 @@ h2 {
 }
 p
 {
-  font-family: queensides;
+  font-family: dafont;
 }
 
 .main-container{
@@ -103,7 +115,7 @@ p
   align-items: center;
   justify-content: center;
   font-size: x-large;
-  font-family: wedding;
+  font-family: paris;
 }
 .navbar-container{
   height: 100%; color: white; display: flex;justify-content: flex-start;padding: 0px 10px;
