@@ -105,6 +105,13 @@ p
   transform: rotate(360deg);
   transition: all 1.3s ease-in-out 0s;
 }
+.content-text
+{
+  margin: auto;
+  padding: 0 10px;
+  text-align: justify;
+}
+
 .navbar-item
 {
   padding: 0 10px;
