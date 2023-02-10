@@ -378,11 +378,11 @@ $scope.getContent = function(event,section)
       }
       if($scope.selectedEvent === "ny")
       {
-        $scope.rsvp.classList.remove("ny-text-secondary")
+        $scope.rsvp.classList.remove("ny-text-accent")
 
       }else
       {
-        $scope.rsvp.classList.remove("fr-text-secondary")
+        $scope.rsvp.classList.remove("fr-text-accent")
       }
     }
 
@@ -395,12 +395,12 @@ $scope.getContent = function(event,section)
         case 'ny':
           $scope.ny.classList.add("main-container-expanded")
           $scope.fr.classList.add("main-container-shrunk")
-          $scope.rsvp.classList.add("ny-text-secondary")
+          $scope.rsvp.classList.add("ny-text-accent")
           break;
         case 'fr':
           $scope.fr.classList.add("main-container-expanded")
           $scope.ny.classList.add("main-container-shrunk")
-          $scope.rsvp.classList.add("fr-text-secondary")
+          $scope.rsvp.classList.add("fr-text-accent")
           break;
       }
 
