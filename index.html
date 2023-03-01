@@ -34,7 +34,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
           <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item fr-text-accent" > <a  class="nav-link fr-text-accent" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
           <li class="nav-item navbar-item">
             <a id="rsvp"
-              data-toggle="modal" data-target="#exampleModal" style="font-family: wedding" class="nav-link fr-text-accent"  href="#">RSVP</a></li>
+              data-toggle="modal" data-target="#{{selectedEvent}}Form" style="font-family: wedding" class="nav-link fr-text-accent"  href="#">RSVP</a></li>
         </ul>
       </div>
     </nav>
@@ -81,6 +81,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
               selected-event="'ny'"
               right="true"></event-item>
           </div>
+          <button type="button" data-toggle="modal" data-target="#nyForm" class="rsvp-button btn btn-primary btn-lg ny-secondary">RSVP</button>
 
         </div>
       </div>
@@ -125,6 +126,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
               selected-event="'fr'"
               right="false"></event-item>
           </div>
+          <button type="button" data-toggle="modal" data-target="#frForm" class="rsvp-button btn btn-primary btn-lg fr-secondary">RSVP</button>
         </div>
       </div>
 
@@ -194,17 +196,17 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
 
   </div>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="nyForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Welcome {{verified.guest}}!</h5>
+          <h5 class="modal-title" id="exampleModalLabelny">Welcome {{guest.name}}! RSVP to Buffalo</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3S9Xrf3e1DnlHNcJsqra-XBwQurr208-4SGHvs3JIqDcNwQ/viewform?embedded=true" width="100%" height="850px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTJNadERMMOs-OJpBPiUG6jcMzmWBnRUG_sRJVmTJI3EFyCA/viewform?embedded=true" width="100%" height="850px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -212,7 +214,24 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
       </div>
     </div>
   </div>
-
+  <div class="modal fade" id="frForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabelfr">Welcome {{guest.name}}! RSVP to France</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLdYH5PZk2F0yIspXJfMC6ehlI7S7hHioC2RWevWn7RmWU0w/viewform?embedded=true" width="100%" height="850px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
 
@@ -236,5 +255,4 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
       </div>
     </div>
   </div>
-
 </script>

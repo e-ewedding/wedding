@@ -149,6 +149,10 @@ p
 {
   color: #FFDE59 !important;
 }
+.ny-secondary
+{
+  background-color: #FFDE59 !important;
+}
 
 .fr{
   background-color: #eccbbd;
@@ -157,11 +161,22 @@ p
 {
   color: #eccbbd !important;
 }
+.rsvp-button
+{
+  margin: auto;
+  font-family: wedding;
+  margin-bottom: 150px;
+  display: flex !important;
+}
+
 .fr-text-secondary
 {
   color: #da5623 !important;
 }
-
+.fr-secondary
+{
+  background-color: #da5623 !important;
+}
 
 .mtl{
   background-color: #99a9a6;
