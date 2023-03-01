@@ -28,7 +28,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul style="margin: auto" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
+        <ul style="width: 100%;
+align-content: space-evenly;
+justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
           <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item fr-text-accent" > <a  class="nav-link fr-text-accent" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
           <li class="nav-item navbar-item">
             <a id="rsvp"
@@ -216,8 +218,8 @@
 
 <script type="text/ng-template" id="eventItem.html">
   <div>
-    <h1 ng-if="selectedEvent === 'ny'" style="font-family: paris" class=" ny-text-secondary">{{content.section}}</h1>
-    <h1 ng-if="selectedEvent === 'fr'" style="text-align: center; font-family: paris" class="fr-text-accent">{{content.section}}</h1>
+    <h1 ng-if="selectedEvent === 'ny'"  class="section-header ny-text-secondary">{{content.section}}</h1>
+    <h1 ng-if="selectedEvent === 'fr'"  class="section-header fr-text-accent">{{content.section}}</h1>
     <div ng-repeat="item in content.content" style="display: flex; flex-direction: column; padding: 20px 0"
          ng-style="{{right}} && {'align-items':'end'}">
       <h4 ng-if="selectedEvent === 'ny'" class="event-item-header event-item-header-ny">{{item.title}}</h4>
