@@ -6,7 +6,7 @@
       [
         {name:"Elliot1",pw:"1",invites:["fr"]},
         {name:"Elliot2",pw:"2",invites:["ny"]},
-        {name:"Elliot3",pw:"3",invites:["fr","ny"],vip:true},
+        {name:"Elliot3",pw:"3",invites:["fr","ny"]},
         {name:"Elliot3",pw:"4",invites:["mtl"]},
       ];
     $scope.tableOfContents =
@@ -40,17 +40,17 @@
           [
             {
               title:'THE VENUE',
-              text:'Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake ',
+              text:'Our venue is Château Lacoste, a quirky and untraditional 18th century chateau located just outside the medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake, hang out with the chateau farm animals, and enjoy the festivities to the fullest.',
               icon: 'img/castle.png'
             },
             {
               title:'ABOUT THE GERS',
-              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture. ',
+              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills, fortified villages, and strong focus on food, wine and agriculture. You could even go so far as to call Gersois wines healthy, as the properties in them supposedly contribute to the area’s life expectancy being the highest in France!',
               icon: 'img/fleurdelis.png'
             },
             {
               title:'ABOUT LUPIAC',
-              text:'Lupiac is a pretty medieval village originally founded in 1090. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ “The Three Musketeers”. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom to see the iconic statue of D’Artagnan with the other three musketeers.  ',
+              text:'Lupiac is a pretty medieval village originally founded in 1090, and is a short walk from Château Lacoste. It’s most famous for being the birthplace and childhood home of Charles de Batz Castelmore (otherwise known as D’Artagnan) who was born in Lupiac in 1613 and was the inspiration behind his namesake’s character in Alexandre Dumas’ ‘The Three Musketeers’. You can find a statue commemorating D’Artagnan in Lupiac itself, or drive 40 minutes to Condom (yes, there is a local town called Condom) to see the iconic statue of D’Artagnan with the other three musketeers. The village itself is fairly tiny, but, being French, it does have a couple of bars and bakeries!',
               icon: 'img/village.png'
             },
           ]
@@ -61,12 +61,17 @@
             [
               {
                 title: 'Rooms at the château'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will need to share rooms (shared rooms have reduced rates). When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. All rooms have ensuite bathrooms, and towels are provided. A continental breakfast with fresh pastries will also be served in the dining room each morning.\n' +
+                  '\n' +
+                  '\n' +
+                  'The rate for each room is 150€ per night, which will be divided between guests sharing rooms.\n' +
+                  '\n' +
+                  'For those interested, we additionally have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. The view of the Milky Way is especially incredible in the Gers, and this time of year is also the peak of the Perseids meteor shower! \n',
                 icon: 'img/heart-key.png'
               },
               {
                 title: 'Nearby accommodation'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: ' If you’d prefer to stay locally, we can help you organise accommodation and  transportation to and from the venue.',
                 icon: 'img/hostel.png'
               }
             ]
@@ -77,34 +82,49 @@
             [
               {
                 title: 'Local gastronomy'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                text: 'The Gers is renowned for being a foodie paradise. Don’t miss trying local Gascon wines, duck (which you’ll find on every menu) and armagnac.',
                 icon: 'img/cutlery.png'
               },
               {
                 title: 'Restaurants & markets'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'Our recommendations:\n' +
+                  '\n' +
+                  'Citrus - Condom\n' +
+                  'La Falène Bleue - Lannepax \n' +
+                  'Racine - Lectoure\n' +
+                  '\n' +
+                  'Bars and restaurants in France usually have a ‘Menu du Jour’, which is a set menu. These are usually quite rustic, but good value, tasty and made with local ingredients. They can include one to four courses (sometimes with wine and/or coffee included) for as little as 14 euros! \n',
                 icon: 'img/duck.png'
               },
               {
                 title: 'Lakes and water parks'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'As well as the lake right on your doorstep in Lupiac, there are several other swimming lakes nearby. Half an hour away in Castéra-Verduzan is a large lake with a beach, inflatable obstacle course, waterslides, kayak rentals, and a snack bar. Also 30 minutes away is a small waterpark in Gondrin.',
                 icon: 'img/wave.png'
               },
               {
                 title: 'Wine & armagnac tasting'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'Gascony is the home of armagnac, so there are plenty of chateaux and distilleries in the area for you to have tastings. One of the best distilleries in the region, Armagnac Delord Frères, is just a 20-minute drive from Lupiac, in the pretty medieval town of Lannepax. We can organise a tasting here for anyone interested!',
                 icon: 'img/winetasting.png'
               },
               {
                 title: 'Nearby towns, medieval villages, historical sites'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'There are many beautiful towns and villages in the Gers, several of which have been named some of the most beautiful in France. \n' +
+                  '\n' +
+                  'Larressingle is a UNESCO listed fortified village that was officially named one of the most beautiful villages in France. \n' +
+                  '\n' +
+                  'Another famously beautiful village is Montréal-du-Gers. 5 minutes away is Séviac, the site of an excavated Roman villa that’s open to the public. The mosaics here are especially impressive!  '+
+                'There is also the possibility of taking a day trip to: \n' + 'Carcassonne\n' +
+                  'Toulouse\n' +
+                  'Bordeaux\n' +
+                  'Cap Ferrat\n' +
+                  'St Emilion\n' +
+                  'Pyrenees\n' +
+                  'Biarritz\n' +
+                  'San Sebastian\n',
+
                 icon: 'img/map-point.png'
               },
-              {
-                title: 'Day trips'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/compass.png'
-              },
+
             ]
         },
         {
@@ -112,28 +132,25 @@
           content:
             [
               {
-                title: 'Day 1: Welcome'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
-                icon: 'img/cheese.png'
-              },
-              {
-                title: 'Day 2: The main event'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                title: 'Day 1: The main event'.toUpperCase(),
+                text: 'We didn’t want to have a traditional wedding, so it made no sense to follow a traditional timeline. We want our guests to be having fun from the moment they arrive, so we won’t make you wait until after the ceremony for food and drinks to be served! Instead, we’ll be handing out wine and welcome shots, along with something sweet, Emily’s favourite food group (French patisseries galore), and something savory to make Elliot happy. This is also your chance to start a ping pong tournament, embrace your inner Frenchman with some pétanque, and get to know the other guests. This might come in handy for…',
                 icon: 'img/party.png'
               },
               {
                 title: 'Battle of the Guests'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'From challenges to trivia, work together and compete against one another for points and prizes!',
                 icon: 'img/battle.png'
               },
               {
                 title: 'The Ceremony'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'Our very special guests, Reverend Michael Alabama Jackson and Sister Mary-Lou from award-winning act Oh My God! It’s The Church has taken time out of their hectic summer schedule to lead our wedding ceremony. Unlike anything you’ve seen before.',
                 icon: 'img/confetti.png'
               },
               {
-                title: 'Day 3: Beach day'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                title: 'Day 2: Beach day'.toUpperCase(),
+                text: 'After breakfast, we’ll head down to the lake for a beach day. Don’t forget your beach towels! If beaches and swimming aren’t your thing, there are plenty of other activities on offer at the lake, such as hiking, canoeing and paddle boarding (these can be rented on-site). There’s also a bar/restaurant with great music, cocktails, and snacks. If you let us know in advance, we can also help you organise other activities such as horse riding, wine and armagnac tasting, visiting local historical sites, day trips, etc. \n' +
+                  '\n' +
+                  'In the evening, come back to the chateau for a farewell barbecue.\n',
                 icon: 'img/bikini.png'
               }
             ]
@@ -143,15 +160,26 @@
             [
               {
                 title: "FRENCH CULTURE",
-                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                text: "In France, waiters are viewed as being facilitators rather than a constant presence. They’re there to help and answer questions, but they don't hover or feel the need to check in constantly. Diners are expected to be more self-sufficient and able to flag down a waiter if they need something.\n" +
+                  "Tipping culture in France is much less of a big deal than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common.\n" +
+                  "Shops are usually closed on Sundays and Mondays, and some also close over lunchtime (generally between 12 and 2 daily, although this is becoming less common).\n",
                 icon: "img/croissant.png"
               },{
                 title: "CAR RENTALS",
-                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+                text: "For anyone traveling from North America and planning on hiring a car, it’s important to specify that you need an automatic car instead of a manual one, which is standard in Europe. Even if you know how to drive a manual, your license won’t be valid to drive them in Europe! \n" +
+                "\n" +
+                "Don’t forget to apply for an international driver’s license before you arrive in Europe (this can easily be done at your local AAA).\n",
                 icon: "img/car.png"
               },{
                 title: "ONWARDS TRAVEL",
-                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
+              text: "If you’re planning to travel to other parts of France or Europe, Lupiac is conveniently located between three international airports (Toulouse, Bordeaux and Tarbes). Train travel is also relatively easy and inexpensive, and there are stations at Auch and Agen. From Agen, you can take the high-speed train (TGV) to Paris in 3 hours, often for as little as 10 euros! \n" +
+                "\n" +
+                "Drive time:\n" +
+                "~ 1.5h: Lourdes, the Pyrenees, Toulouse\n" +
+                "~ 2h: Spain, Bordeaux\n" +
+                "~ 3h: San Sebastian, Cap Ferret\n" +
+                "~ 4h: Montpellier\n" +
+                "~ 8.5h: Paris\n",
                 icon: "img/luggage.png"
               },
             ]
@@ -165,12 +193,12 @@
           [
             {
               title:'THE VENUE',
-              text:'Our venue is Château Lacoste, an 18th century chateau located just outside the pretty medieval village of Lupiac in south-west France. The chateau looks over Lupiac lake, which is just a few minutes walk down the hill, as well as views of the Pyrenees mountains to the south. Guests will be able to relax on the beach at the lake ',
+              text: "Our shindig will be held in Chestnut Ridge Park, at the Commissioner’s Cabin. Elliot has a special connection to the park, having been there countless times growing up; sledding and tobogganing in the winter, exploring the woods, and having BBQs in the summer. His grandfather supplied many of the trees that grow in the park from the family nursery business, Schichtel’s Nursery. Approximately 20 miles outside Buffalo, the cabin is deep in the woods in a secluded section of the park. In the fall, the park is especially beautiful, with the leaves changing color to vibrant shades of red, orange, and yellow. The lake outside the cabin has a short hiking trail around the perimeter for anyone wanting to explore! There will be parking on site, and we’ll also arrange transport between the venue and the hotel.",
               icon: 'img/cabin.png'
             },
             {
               title:'BUFFALO',
-              text:'The Gers is an area in south-west France, located in modern-day Gascony. It’s the most rural department in the whole of France, and is often referred to as French Tuscany due to its beautiful rolling hills and strong focus on food, wine and agriculture. ',
+              text:'Buffalo is the heart of western New York, and the second biggest city in the state (can you guess the first?). It was once an important trading hub along the Erie Canal, so a lot of the grand architecture and mansions remain from that time. These days, it has almost 50 craft breweries, a great restaurant scene, and, on top of being known as the birthplace of Buffalo wings, is famous for its pizza and ‘beef on weck’ sandwiches.',
               icon: 'img/buffalo.png'
             }
           ]
@@ -180,19 +208,14 @@
           content:
             [
               {
-                title: 'hotel options'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                title: 'planning your stay'.toUpperCase(),
+                text: 'For your stay over the wedding weekend, we’ve arranged a group rate at The Best Western which is a short walk from roller disco and the bar crawl route we have planned. We’ll also be arranging transport from there to the wedding venue at Chestnut Ridge.',
                 icon: 'img/hotel.png'
               },
               {
                 title: 'The Best Western'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: '$189 per night on Friday and Saturday, $129 for Sunday Night (includes breakfast). When booking, call the hotel and ask for the Scott-O’Reilly wedding to get the discounted rate: +1 716-886-8333',
                 icon: 'img/3star-hotel.png'
-              },
-              {
-                title: 'The Lenox Hotel'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/2star-hotel.png'
               }
             ]
         },
@@ -202,17 +225,17 @@
             [
               {
                 title: 'Buffalo Botanical Gardens'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                text: 'Visit the Buffalo Botanical Gardens to see its diverse collection of plants and flowers. Elliot\'s father, the former head horticulturist, spent many years cultivating the gardens, and Elliot used to love playing hide and seek among its many nooks and crannies.',
                 icon: 'img/plant.png'
               },
               {
                 title: 'The Martin House'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'The Martin House was designed by the famous American architect Frank Lloyd Wright, and is considered to be one of his most important early works. The house is open to the public if you book a tour.',
                 icon: 'img/museum.png'
               },
               {
                 title: 'Niagara Falls'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: 'One of the best things about Buffalo is its proximity to Niagara Falls, which you can get to in about 25 minutes. Although the American side may not have as much to offer, in our opinion, nothing compares to the experience of riding on the Maid of the Mist and getting a close-up view of the Falls. Crossing the Rainbow Bridge to the Canadian side of the falls is a breeze, and there you will find loads of fun attractions such as wax museums, haunted houses, a butterfly conservatory, and amusement rides. Additionally, the Canadian Niagara region is renowned for its wine production, with many vineyards offering tastings, especially of ice wine, a local delicacy.',
                 icon: 'img/waterfall.png'
               }
             ]
@@ -223,52 +246,34 @@
             [
               {
                 title: 'The main event'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
+                text: 'We’d love for you to join us at a fun and relaxed gathering to celebrate our wedding. This is where we’ll exchange our rings and where our families will meet for the first time. It’ll also be Emily’s parents’ first time in the US! \n' +
+                  '\n' +
+                  'Expect an informal and non-traditional event with laid-back food, craft beer, and picklebacks. Emily has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day. To make the most of the season, we’ll also have traditional cider mill fare such as apple cider doughnuts and pies. Our main aim is for everyone to socialize and have fun, so relax, eat s’mores and enjoy!\n',
                 icon: 'img/chicken-wing.png'
               },
               {
                 title: 'Timeline'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
+                text: '1:00pm: Arrival of guests and live music by Elliot’s sister Natalie. Help yourselves to drinks and cookies!\n' +
+                  '\n' +
+                  '2:00pm: Exchanging of rings\n' +
+                  '\n' +
+                  '2:30pm: Live music and games\n' +
+                  '\n' +
+                  '3:00pm: Pizza, wings and pierogies!\n' +
+                  '\n' +
+                  '3:30pm: The Official Wedding Wing Eating Contest\n' +
+                  '\n' +
+                  '4:00pm: Speeches - We’re playing with fire here by welcoming anyone to grab the mic and be as out of the box as you’d like! Karaoke, impromptu performances and hidden talents are also strongly encouraged. \n' +
+                  '\n' +
+                  '5:00pm: Cutting our wedding pie\n' +
+                  '\n' +
+                  '6:00pm: Shuttle back to Buffalo \n' +
+                  '\n' +
+                  '8:00pm: Roller disco at Buffalo Canalside - Skates will be provided and you’re welcome to change into something more comfortable beforehand. The skating rink is outside, so we recommend bringing a couple of warmer layers! \n' +
+                  '\n' +
+                  '10:00pm: Begin the Buffalo Bar Crawl \n',
                 icon: 'img/timeline.png'
               }
-            ]
-        },{
-          section: 'NIAGARA',
-          content:
-            [
-              {
-                title: 'Family Trip: The Falls'.toUpperCase(),
-                text: 'The chateau has enough beds to sleep up to 60 people, although some guests will have to share rooms with other guests. When you RSVP, you’ll be asked to specify your accommodation preferences so we can assign you a room accordingly. For those interested, we also have the option of creating a campsite in the chateau grounds, which, with the area being so remote, are perfect for stargazing. ',
-                icon: 'img/group.png'
-              },
-              {
-                title: 'Niagara-on-the-lake: Whisky, Wine & Goats'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/whiskey.png'
-              },
-              {
-                title: 'dinner'.toUpperCase(),
-                text: ' If you’d prefer to stay locally, we can help you organise accommodation and arrange transport to and from the venue. Here are a few of our recommendations:',
-                icon: 'img/plate.png'
-              }
-            ]
-        },
-        {section: 'INFORMATION',
-          content:
-            [
-              {
-                title: "FRENCH CULTURE",
-                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
-                icon: "img/croissant.png"
-              },{
-                title: "CAR RENTALS",
-                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
-                icon: "img/car.png"
-              },{
-                title: "ONWARDS TRAVEL",
-                text: "In France, the role of the waiter is viewed as one of a facilitator, rather than a constant presence. They are there to help and answer questions, but they don't hover and they don't feel the need to check in constantly. French diners are expected to be more self-sufficient and to be able to flag down a waiter if they need something. Tipping culture in France is generally more modest than in the US. Service is often included in prices, and 5-10% tip is considered sufficient for good service. In restaurants and cafes, rounding up the bill or leaving small change is common. Things will usually be closed on Sundays, Mondays and at lunchtime In French restaurants, it is common to offer set menus, also known as \"menu du jour\" or \"menu fixe\". These are pre-set meals that typically include a starter, main course and dessert, and sometimes also include a glass of wine or aperitif. The set menu is usually a good value and offers a variety of dishes to choose from at a fixed price, it is also a good way to try different dishes from the restaurant's menu.",
-                icon: "img/luggage.png"
-              },
             ]
         }
       ];
@@ -312,10 +317,6 @@ $scope.getContent = function(event,section)
     function loginGuest(guest)
     {
       $scope.guest = guest
-      if(guest.vip)
-      {
-        $scope.tableOfContents.ny.splice(3,0,"Niagara")
-      }
       $timeout(function()
       {
         $scope.ny = document.querySelector('#ny');
@@ -427,5 +428,10 @@ $scope.getContent = function(event,section)
           console.log($scope.content)
         }
       }
-    });
+    }).filter('newline', function($sce) {
+    return function(text) {
+      text = text.replace(/\n/g, '<br />');
+      return $sce.trustAsHtml(text);
+    }
+  });;
 })(window);

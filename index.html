@@ -69,12 +69,6 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
               selected-event="'ny'"
               right="false"></event-item>
           </div>
-          <div ng-if="guest.vip" class="event-item"  id="Niagara-ny" >
-            <event-item
-              content="getContent('ny','NIAGARA')"
-              selected-event="'ny'"
-              right="true"></event-item>
-          </div>
           <div class="event-item"  id="The Celebration-ny" >
             <event-item
               content="getContent('ny','THE CELEBRATION')"
@@ -92,7 +86,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
            class = " main-container-show-hide fr" >
         <div id="simpleFr" style="display: flex;flex-direction: column;align-items: center;" ng-show="animate" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
           <h1 class="event-header">FRANCE</h1>
-          <h1 class="event-header">JUNE 25 2024</h1>
+          <h1 class="event-header">JULY 27 2024</h1>
           <div ng-show="animate" class="event-icon" style="background:url('img/fr-logo-transparent.svg');"></div>
         </div>
         <div id ="detailedFr" style="position: relative;" ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'fr'">
@@ -247,8 +241,8 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
         <div ng-if="!right">
           <img src="{{item.icon}}">
         </div>
-        <p ng-if="selectedEvent === 'ny'" class="content-text" style="color: white;">{{item.text}} </p>
-        <p ng-if="selectedEvent === 'fr'" class="content-text fr-text-secondary" >{{item.text}} </p>
+        <p ng-if="selectedEvent === 'ny'" class="content-text" style="color: white;" ng-bind-html="item.text | newline"> </p>
+        <p ng-if="selectedEvent === 'fr'" class="content-text fr-text-secondary" ng-bind-html="item.text | newline" > </p>
         <div ng-if="right">
           <img src="{{item.icon}}">
         </div>
