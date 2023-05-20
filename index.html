@@ -237,17 +237,17 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
          ng-style="{{right}} && {'align-items':'end'}">
       <h4 ng-if="selectedEvent === 'ny'" class="event-item-header ny-text-accent event-item-header-ny">{{item.title}}</h4>
       <h4 ng-if="selectedEvent === 'fr'" class="event-item-header fr-text-accent event-item-header-fr">{{item.title}}</h4>
-      <div style="display: flex;flex-direction: row;width:100%;">
-        <div>
-          <img ng-if="!right" src="{{item.icon}}">
-          <img ng-if="right" style="opacity:0;" src="{{item.icon}}">
-        </div>
+      <div ng-if="!right" style="display: flex;flex-direction: row;width:100%;" >
+          <img style="height:100px;width:100px;" src="{{item.icon}}">
         <p ng-if="selectedEvent === 'ny'" class="content-text ny-text-secondary" ng-bind-html="item.text | newline"> </p>
         <p ng-if="selectedEvent === 'fr'" class="content-text fr-text-secondary" ng-bind-html="item.text | newline" > </p>
-        <div>
-          <img ng-if="right" src="{{item.icon}}">
-          <img ng-if="!right" style="opacity:0;" src="{{item.icon}}">
-        </div>
+          
+      </div>
+      <div ng-if="right" style="display: flex;flex-direction: row;width:100%;justify-content: space-between;">
+          
+        <p ng-if="selectedEvent === 'ny'" class="content-text ny-text-secondary" ng-bind-html="item.text | newline"> </p>
+        <p ng-if="selectedEvent === 'fr'" class="content-text fr-text-secondary" ng-bind-html="item.text | newline" > </p>
+          <img style="height:100px;width:100px;" src="{{item.icon}}">
       </div>
     </div>
   </div>

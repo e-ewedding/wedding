@@ -73,21 +73,19 @@ p
   -ms-transition:all linear .65s;
   -o-transition:all linear .65s;
   transition:all linear .65s;
-    z-index: 2;
+   
 }
 
 .animate-show.ng-hide-remove,
 .animate-hide.ng-hide-add.ng-hide-add-active {
   opacity: 0;
-    z-index: 2;
-  display: block !important;
+   
 }
 
 .animate-hide.ng-hide-add,
 .animate-show.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
-    z-index: 2;
-  display: block !important;
+   
 }
 
 .details
@@ -105,12 +103,12 @@ p
   transition: all 1.3s ease-in-out 0s;
   background-position: center!important;
   background-size: contain!important;
-    z-index: 2;
+   
 }
 .event-icon:hover {
   transform: rotate(360deg);
   transition: all 1.3s ease-in-out 0s;
-    z-index: 2;
+   
 }
 .content-text
 {
