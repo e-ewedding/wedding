@@ -4,8 +4,8 @@
   {
     $scope.guestList =
       [
-        {name:"Elliot1",pw:"1",invites:["fr"]},
         {name:"Elliot2",pw:"2",invites:["ny"]},
+        {name:"Elliot1",pw:"1",invites:["fr"]},
         {name:"Elliot3",pw:"3",invites:["fr","ny"]},
         {name:"Elliot3",pw:"4",invites:["mtl"]},
       ];
@@ -193,13 +193,18 @@
           [
             {
               title:'THE VENUE',
-              text: "Our shindig will be held in Chestnut Ridge Park, at the Commissioner’s Cabin. Elliot has a special connection to the park, having been there countless times growing up; sledding and tobogganing in the winter, exploring the woods, and having BBQs in the summer. His grandfather supplied many of the trees that grow in the park from the family nursery business, Schichtel’s Nursery. Approximately 20 miles outside Buffalo, the cabin is deep in the woods in a secluded section of the park. In the fall, the park is especially beautiful, with the leaves changing color to vibrant shades of red, orange, and yellow. The lake outside the cabin has a short hiking trail around the perimeter for anyone wanting to explore! There will be parking on site, and we’ll also arrange transport between the venue and the hotel.",
+              text: "Our celebration will be held at the Commissioner’s Cabin in Chestnut Ridge Park, about 20 miles south of Buffalo. Elliot has a special connection to the park, as his grandfather supplied many of the trees from the family nursery business, Schichtel’s Nursery. The cabin itself is in a secluded woodland section of the park, which is especially beautiful in the fall; for anyone wanting to explore, there’s a lake just outside the cabin with a short hiking trail around the perimeter. Parking will be available on site, and we’ll also arrange transport between the venue and the hotel.",
               icon: 'img/cabin.png'
             },
             {
               title:'BUFFALO',
-              text:'Buffalo is the heart of western New York, and the second biggest city in the state (can you guess the first?). It was once an important trading hub along the Erie Canal, so a lot of the grand architecture and mansions remain from that time. These days, it has almost 50 craft breweries, a great restaurant scene, and, on top of being known as the birthplace of Buffalo wings, is famous for its pizza and ‘beef on weck’ sandwiches.',
+              text:"Buffalo is the second biggest city in New York state (no prizes for guessing the first), and is known as an iconic destination for fans of architecture due to its historical importance as a trading hub along the Erie Canal. These days, it has almost 50 craft breweries, a great restaurant scene, and, on top of being known as the birthplace of Buffalo wings, is famous for its pizza and ‘beef on weck’ sandwiches.",
               icon: 'img/buffalo.png'
+            },
+            {
+              title:'DRESS CODE',
+              text:"Smart-casual, or whatever makes you feel fabulous (bonus points for colour, sequins or cowboy boots).",
+              icon: 'img/cowboy.png'
             }
           ]
         },
@@ -209,7 +214,7 @@
             [
               {
                 title: 'planning your stay'.toUpperCase(),
-                text: 'For your stay over the wedding weekend, we’ve arranged a group rate at The Best Western which is a short walk from roller disco and the bar crawl route we have planned. We’ll also be arranging transport from there to the wedding venue at Chestnut Ridge.',
+                text: 'For your stay over the wedding weekend, we’ve arranged a group rate at The Best Western, which is a short walk from the roller disco and the bar crawl route we have planned. We’ll also be arranging transport from there to the cabin at Chestnut Ridge.',
                 icon: 'img/hotel.png'
               },
               {
@@ -225,7 +230,7 @@
             [
               {
                 title: 'Buffalo Botanical Gardens'.toUpperCase(),
-                text: 'Visit the Buffalo Botanical Gardens to see its diverse collection of plants and flowers. Elliot\'s father, the former head horticulturist, spent many years cultivating the gardens, and Elliot used to love playing hide and seek among its many nooks and crannies.',
+                text: 'The Buffalo Botanical Gardens has a beautiful and diverse collection of plants and flowers. Elliot\'s dad is the former head horticulturist, and spent many years cultivating the gardens.',
                 icon: 'img/plant.png'
               },
               {
@@ -235,7 +240,7 @@
               },
               {
                 title: 'Niagara Falls'.toUpperCase(),
-                text: 'One of the best things about Buffalo is its proximity to Niagara Falls, which you can get to in about 25 minutes. Although the American side may not have as much to offer, in our opinion, nothing compares to the experience of riding on the Maid of the Mist and getting a close-up view of the Falls. Crossing the Rainbow Bridge to the Canadian side of the falls is a breeze, and there you will find loads of fun attractions such as wax museums, haunted houses, a butterfly conservatory, and amusement rides. Additionally, the Canadian Niagara region is renowned for its wine production, with many vineyards offering tastings, especially of ice wine, a local delicacy.',
+                text: 'One of the best things about Buffalo is its proximity to Niagara Falls, which you can get to in about 25 minutes. For the best experience, we recommend riding on the Maid of the Mist and doing the Journey Behind the Falls to get a view from up close. Be warned, you get very wet! For another great view of the Falls, cross Rainbow Bridge to the Canadian side (this is a country border, so don’t forget your passport!). This side also has loads of fun attractions such as wax museums, haunted houses, a butterfly conservatory, and amusement rides. The Canadian Niagara region is renowned for its wine production and tastings, particularly ice wine, and is just over the border from Buffalo.',
                 icon: 'img/waterfall.png'
               }
             ]
@@ -248,30 +253,32 @@
                 title: 'The main event'.toUpperCase(),
                 text: 'We’d love for you to join us at a fun and relaxed gathering to celebrate our wedding. This is where we’ll exchange our rings and where our families will meet for the first time. It’ll also be Emily’s parents’ first time in the US! \n' +
                   '\n' +
-                  'Expect an informal and non-traditional event with laid-back food, craft beer, and picklebacks. Emily has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day. To make the most of the season, we’ll also have traditional cider mill fare such as apple cider doughnuts and pies. Our main aim is for everyone to socialize and have fun, so relax, eat s’mores and enjoy!\n',
+                  'We embrace the weird and wonderful, so expect an informal event with laid-back food, craft beer, and pickleback shots. Doing something more relaxed feels a lot more ‘us’ than a formal sit-down meal - we just want everyone to have fun!\n' +
+                  '\n' +
+                  'Emily also has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day; we’ll have traditional cider mill fare such as apple cider doughnuts and pies to make the most of the season. \n',
                 icon: 'img/chicken-wing.png'
               },
               {
                 title: 'Timeline'.toUpperCase(),
-                text: '1:00pm: Arrival of guests and live music by Elliot’s sister Natalie. Help yourselves to drinks and cookies!\n' +
+                text: '<b>1:00pm:</b> Arrival of guests and live music by Elliot’s sister Natalie. Help yourselves to drinks and cookies!\n' +
                   '\n' +
-                  '2:00pm: Exchanging of rings\n' +
+                  '<b>1:40pm:</b> Exchanging of rings\n' +
                   '\n' +
-                  '2:30pm: Live music and games\n' +
+                  '<b>2:00pm:</b> Live music and games\n' +
                   '\n' +
-                  '3:00pm: Pizza, wings and pierogies!\n' +
+                  '<b>2:30pm:</b> Food - We’re going all-out Buffalo with pizza, wings and pierogies\n' +
                   '\n' +
-                  '3:30pm: The Official Wedding Wing Eating Contest\n' +
+                  '<b>3:00pm:</b> Emily & Elliot’s Official Wing Eating Contest - what started as a joke, but is now all too real.\n' +
                   '\n' +
-                  '4:00pm: Speeches - We’re playing with fire here by welcoming anyone to grab the mic and be as out of the box as you’d like! Karaoke, impromptu performances and hidden talents are also strongly encouraged. \n' +
+                  '<b>3:30pm:</b> Speeches - We’re playing with fire here by welcoming anyone to grab the mic and be as out of the box as you’d like. Traditional speeches are welcomed, but karaoke, impromptu performances and hidden talents are also strongly encouraged. \n' +
                   '\n' +
-                  '5:00pm: Cutting our wedding pie\n' +
+                  '<b>4:00pm:</b> Cutting the cake\n' +
                   '\n' +
-                  '6:00pm: Shuttle back to Buffalo \n' +
+                  '<b>6:00pm:</b> Shuttle back to Buffalo \n' +
                   '\n' +
-                  '8:00pm: Roller disco at Buffalo Canalside - Skates will be provided and you’re welcome to change into something more comfortable beforehand. The skating rink is outside, so we recommend bringing a couple of warmer layers! \n' +
+                  '<b>8:00pm:</b> Roller disco at Buffalo Canalside - Skates will be provided and you’re welcome to change into something more comfortable beforehand. The skating rink is outside, so we recommend bringing a couple of warmer layers! \n' +
                   '\n' +
-                  '10:00pm: Begin the Buffalo Bar Crawl \n',
+                  '<b>10:00pm:</b> Begin the Buffalo Bar Crawl \n',
                 icon: 'img/timeline.png'
               }
             ]
@@ -329,10 +336,11 @@ $scope.getContent = function(event,section)
 
     let init = function()
     {
-      if(sessionStorage.getItem("guest"))
-      {
-        loginGuest(_.find($scope.guestList,{name:sessionStorage.getItem("guest")}))
-      }
+      loginGuest($scope.guestList[0])
+      // if(sessionStorage.getItem("guest"))
+      // {
+      //   loginGuest(_.find($scope.guestList,{name:sessionStorage.getItem("guest")}))
+      // }
     }
     init()
     $scope.selectedEvent = 'all'
@@ -424,9 +432,7 @@ $scope.getContent = function(event,section)
           right: "=",
           content: "=",
         },
-        link: function ($scope) {
-          console.log($scope.content)
-        }
+       
       }
     }).filter('newline', function($sce) {
     return function(text) {

@@ -31,10 +31,10 @@
         <ul style="width: 100%;
 align-content: space-evenly;
 justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
-          <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item fr-text-accent" > <a  class="nav-link fr-text-accent" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
+          <li  ng-repeat="item in tableOfContents[selectedEvent]" class="nav-item navbar-item ny-text-accent" > <a  class="nav-link ny-text-accent" href="#{{item}}-{{selectedEvent}}">{{item.toUpperCase()}}</a></li>
           <li class="nav-item navbar-item">
             <a id="rsvp"
-              data-toggle="modal" data-target="#{{selectedEvent}}Form" style="font-family: wedding" class="nav-link fr-text-accent"  href="#">RSVP</a></li>
+              data-toggle="modal" data-target="#{{selectedEvent}}Form" style="font-family: dafont" class="nav-link ny-text-accent"  href="#">RSVP</a></li>
         </ul>
       </div>
     </nav>
@@ -48,7 +48,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
           <h1 class="event-header">NEW YORK</h1>
           <h1 class="event-header">OCTOBER 8 2023</h1>
           <!-- <img src="img/ny-logo-transparent.svg"> -->
-          <div ng-show="animate" class="event-icon" style="background:url('img/ny-logo-transparent.svg');"></div>
+          <div ng-show="animate" class="event-icon" style="background:url('img/ny-logo-transparent_new.svg');"></div>
         </div>
         <div ng-show="!animate" data-spy="scroll" data-target="#navbar" data-offset="0" class="details" ng-if="selectedEvent === 'ny'">
           <div class="event-item" style="padding-top: 125px"  id="About-ny" >
@@ -75,7 +75,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
               selected-event="'ny'"
               right="true"></event-item>
           </div>
-          <button type="button" data-toggle="modal" data-target="#nyForm" class="rsvp-button btn btn-primary btn-lg ny-secondary">RSVP</button>
+          <button type="button" data-toggle="modal" style="border:none" data-target="#nyForm" class="rsvp-button btn btn-primary btn-lg ny-secondary">RSVP</button>
 
         </div>
       </div>
@@ -194,7 +194,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabelny">Welcome {{guest.name}}! RSVP to Buffalo</h5>
+          <h5 class="modal-title" id="exampleModalLabelny"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -231,22 +231,25 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
 
 <script type="text/ng-template" id="eventItem.html">
   <div>
-    <h1 ng-if="selectedEvent === 'ny'"  class="section-header ny-text-secondary">{{content.section}}</h1>
+    <h1 ng-if="selectedEvent === 'ny'"  class="section-header ny-text-accent">{{content.section}}</h1>
     <h1 ng-if="selectedEvent === 'fr'"  class="section-header fr-text-accent">{{content.section}}</h1>
     <div ng-repeat="item in content.content" style="display: flex; flex-direction: column; padding: 20px 0"
          ng-style="{{right}} && {'align-items':'end'}">
-      <h4 ng-if="selectedEvent === 'ny'" class="event-item-header event-item-header-ny">{{item.title}}</h4>
+      <h4 ng-if="selectedEvent === 'ny'" class="event-item-header ny-text-accent event-item-header-ny">{{item.title}}</h4>
       <h4 ng-if="selectedEvent === 'fr'" class="event-item-header fr-text-accent event-item-header-fr">{{item.title}}</h4>
-      <div style="display: flex;flex-direction: row">
-        <div ng-if="!right">
-          <img src="{{item.icon}}">
+      <div style="display: flex;flex-direction: row;width:100%;">
+        <div>
+          <img ng-if="!right" src="{{item.icon}}">
+          <img ng-if="right" style="opacity:0;" src="{{item.icon}}">
         </div>
-        <p ng-if="selectedEvent === 'ny'" class="content-text" style="color: white;" ng-bind-html="item.text | newline"> </p>
+        <p ng-if="selectedEvent === 'ny'" class="content-text ny-text-secondary" ng-bind-html="item.text | newline"> </p>
         <p ng-if="selectedEvent === 'fr'" class="content-text fr-text-secondary" ng-bind-html="item.text | newline" > </p>
-        <div ng-if="right">
-          <img src="{{item.icon}}">
+        <div>
+          <img ng-if="right" src="{{item.icon}}">
+          <img ng-if="!right" style="opacity:0;" src="{{item.icon}}">
         </div>
       </div>
     </div>
   </div>
 </script>
+z
