@@ -209,7 +209,7 @@
           ]
         },
         {
-          section: 'ACCOMMODATION',
+          section: 'WHERE TO STAY',
           content:
             [
               {
@@ -246,7 +246,7 @@
             ]
         },
         {
-          section: 'THE CELEBRATION',
+          section: 'THE PARTY',
           content:
             [
               {
