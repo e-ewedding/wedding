@@ -258,23 +258,23 @@
                 title: 'Timeline'.toUpperCase(),
                 text: '<b>1:00pm:</b> Arrival of guests and live music by Elliot’s sister Natalie. Grab a drink, grab a snack, have a sing-a-long.\n' +
                   '\n' +
-                  '<b>1:40pm:</b> Exchanging of rings\n' +
+                  '<b>1:40pm:</b> Exchanging of rings.\n' +
                   '\n' +
-                  '<b>2:00pm:</b> Live music and games\n' +
+                  '<b>2:00pm:</b> Live music and games.\n' +
                   '\n' +
-                  '<b>2:30pm:</b> Food - We’re going all-out Buffalo with pizza, wings and pierogies\n' +
+                  '<b>2:30pm:</b> Food - We’re going all-out Buffalo with pizza, wings and pierogies.\n' +
                   '\n' +
                   '<b>3:00pm:</b> Emily & Elliot’s Official Wing Eating Contest - what started as a joke, but is now all too real.\n' +
                   '\n' +
                   '<b>3:30pm:</b> Speeches - We’re playing with fire here by welcoming anyone to grab the mic and be as out of the box as you’d like. Traditional speeches are welcomed, but karaoke, impromptu performances and hidden talents are also strongly encouraged. \n' +
                   '\n' +
-                  '<b>4:00pm:</b> Cutting the cake\n' +
+                  '<b>4:00pm:</b> Cutting the cake.\n' +
                   '\n' +
-                  '<b>6:00pm:</b> Shuttle back to Buffalo \n' +
+                  '<b>6:00pm:</b> Shuttle back to Buffalo. \n' +
                   '\n' +
                   '<b>8:00pm:</b> Roller disco at Buffalo Canalside - Skates will be provided and you’re welcome to change into something more comfortable beforehand. The skating rink is outside, so we recommend bringing a couple of warmer layers! \n' +
                   '\n' +
-                  '<b>10:00pm:</b> Begin the Buffalo Bar Crawl \n',
+                  '<b>10:00pm:</b> Begin the Buffalo Bar Crawl. \n',
                 icon: 'img/timeline.png'
               }
             ]
