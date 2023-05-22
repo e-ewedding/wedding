@@ -240,7 +240,7 @@
               },
               {
                 title: 'Niagara Falls'.toUpperCase(),
-                text: 'One of the best things about Buffalo is its proximity to Niagara Falls, which you can get to in about 25 minutes. For the best experience, we recommend riding on the Maid of the Mist and doing the Journey Behind the Falls to get a view from up close. Be warned, you get very wet! For another great view of the Falls, cross Rainbow Bridge to the Canadian side (this is a country border, so don’t forget your passport!). This side also has loads of fun attractions such as wax museums, haunted houses, a butterfly conservatory, and amusement rides. The Canadian Niagara region is renowned for its wine production and tastings, particularly ice wine, and is just over the border from Buffalo.',
+                text: 'One of the best things about Buffalo is its proximity to Niagara Falls, which you can get to in about 25 minutes. For the best experience, we recommend riding on the Maid of the Mist and doing the Journey Behind the Falls to get a view from up close. Be warned, you get very wet! For another great view of the Falls, cross Rainbow Bridge to the Canadian side (this is a country border, so don’t forget your passport!). The Canadian Niagara region is renowned for its wine production and tastings, particularly ice wine, and is just over the border from Buffalo.',
                 icon: 'img/waterfall.png'
               }
             ]
