@@ -255,12 +255,12 @@
                   '\n' +
                   'We embrace the weird and wonderful, so expect an informal event with laid-back food, craft beer, and pickleback shots. Doing something more relaxed feels a lot more ‘us’ than a formal sit-down meal - we just want everyone to have fun!\n' +
                   '\n' +
-                  'Emily also has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day; we’ll have traditional cider mill fare such as apple cider doughnuts and pies to make the most of the season. \n',
+                  'Emily also has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day, and we’ll have traditional cider mill fare such as apple cider doughnuts and pies to make the most of the season. \n',
                 icon: 'img/chicken-wing.png'
               },
               {
                 title: 'Timeline'.toUpperCase(),
-                text: '<b>1:00pm:</b> Arrival of guests and live music by Elliot’s sister Natalie. Help yourselves to drinks and cookies!\n' +
+                text: '<b>1:00pm:</b> Arrival of guests and live music by Elliot’s sister Natalie. Grab a drink, grab a snack, have a sing-a-long.\n' +
                   '\n' +
                   '<b>1:40pm:</b> Exchanging of rings\n' +
                   '\n' +
