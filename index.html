@@ -45,7 +45,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
             ng-class="{{guest.invites.length}} === 1 ? 'main-container-solo' : 'main-container'"
             class="main-container-show-hide ny" >
         <div ng-show="animate" style="display: flex;flex-direction: column;align-items: center;" class="animate-show animate-hide" ng-if="selectedEvent == 'all'">
-          <h1 class="event-header">NEW YORK</h1>
+          <h1 class="event-header">EMILY + ELLIOT</h1>
           <h1 class="event-header">OCTOBER 8 2023</h1>
           <!-- <img src="img/ny-logo-transparent.svg"> -->
           <div ng-show="animate" class="event-icon" style="background:url('img/ny-logo-transparent_new.svg');"></div>
@@ -69,7 +69,7 @@ justify-content: space-evenly;" class="navbar-nav nav mr-auto mt-2 mt-lg-0">
               selected-event="'ny'"
               right="false"></event-item>
           </div>
-          <div class="event-item"  id="The Celebration-ny" >
+          <div class="event-item" style="padding-bottom:0" id="The Celebration-ny" >
             <event-item
               content="getContent('ny','THE PARTY')"
               selected-event="'ny'"

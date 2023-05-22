@@ -251,11 +251,7 @@
             [
               {
                 title: 'The main event'.toUpperCase(),
-                text: 'We’d love for you to join us at a fun and relaxed gathering to celebrate our wedding. This is where we’ll exchange our rings and where our families will meet for the first time. It’ll also be Emily’s parents’ first time in the US! \n' +
-                  '\n' +
-                  'We embrace the weird and wonderful, so expect an informal event with laid-back food, craft beer, and pickleback shots. Doing something more relaxed feels a lot more ‘us’ than a formal sit-down meal - we just want everyone to have fun!\n' +
-                  '\n' +
-                  'Emily also has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day, and we’ll have traditional cider mill fare such as apple cider doughnuts and pies to make the most of the season. \n',
+                text: 'We’d love for you to join us at a fun and relaxed gathering to celebrate our wedding. This is where we’ll exchange our rings and where our families will meet for the first time. It’ll also be Emily’s parents’ first time in the US! We embrace the weird and wonderful, so expect an informal event with laid-back food, craft beer, and pickleback shots. Doing something more relaxed feels a lot more ‘us’ than a formal sit-down meal - we just want everyone to have fun! Emily also has a sweet tooth that was once described as “alarming”, so it was essential for us to have baked goods on hand all day, and we’ll have traditional cider mill fare such as apple cider doughnuts and pies to make the most of the season.', 
                 icon: 'img/chicken-wing.png'
               },
               {
